@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Myoul.iml" filepath="$PROJECT_DIR$/Myoul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Myoul DB/Myoul DB.iml" filepath="$PROJECT_DIR$/Myoul DB/Myoul DB.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

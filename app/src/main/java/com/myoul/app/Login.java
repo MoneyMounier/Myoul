@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import java.io.File;
+
 public class Login extends AppCompatActivity {
 
     public static final String LEAD = "com.myoul.app";
@@ -41,6 +43,7 @@ public class Login extends AppCompatActivity {
     }
 
     private boolean login(String user, String pass){
+        //will actually login to database
         return true;
     }
 }

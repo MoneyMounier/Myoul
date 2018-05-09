@@ -16,7 +16,7 @@ public class Home extends AppCompatActivity {
         String message = intent.getStringExtra(Login.LEAD);
 
         // Capture the layout's TextView and set the string as its text
-        TextView textView = findViewById(R.id.textView);
-        textView.setText(message);
+        //TextView textView = findViewById(R.id.textView);
+        //textView.setText(message);
     }
 }
