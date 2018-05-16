@@ -41,17 +41,14 @@ public class MyoulServer {
             try {
                 ObjectInputStream stream = new ObjectInputStream(sock.getInputStream());
                 String input = (String)stream.readObject();
+                System.out.println(input);
                 String[] cmd = input.split(" ");
                 String result = null;
-                if(cmd[0] == "login" && cmd.length == 3){
+                if(cmd[0].equals("login") && cmd.length == 3){
                     result = LoginServer.authorize(cmd[1], cmd[2]);
                     close(result);
                 }else
                     close("Invalid Command");
-
-                ObjectOutputStream outstream = new ObjectOutputStream(sock.getOutputStream());
-                outstream.writeObject(result);
-
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -61,7 +58,11 @@ public class MyoulServer {
         }
 
         private void close(String result){
+            if(sock.isClosed())
+                return;
+
             try {
+                System.out.println(result);
                 ObjectOutputStream stream = new ObjectOutputStream(sock.getOutputStream());
                 stream.writeObject(result);
                 stream.flush();

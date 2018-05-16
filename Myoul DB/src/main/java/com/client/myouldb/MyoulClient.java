@@ -1,6 +1,5 @@
 package com.client.myouldb;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -18,18 +17,30 @@ public class MyoulClient extends Thread{
 
     }
 
+    public static String query(String cmd, String address, int port){
+
+        MyoulClient client = new MyoulClient(cmd, address, port);
+        client.start();
+        try {
+            client.join();
+            return client.result;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @Override
     public void run(){
 
         try {
-            System.out.println(cmd + " " + address + " " +port);
             Socket sock = new Socket(address, port);
 
             ObjectOutputStream out = new ObjectOutputStream(sock.getOutputStream());
             out.writeObject(cmd);
 
             ObjectInputStream in = new ObjectInputStream(sock.getInputStream());
-            String result = (String)in.readObject();
+            result = (String)in.readObject();
 
             sock.close();
 
