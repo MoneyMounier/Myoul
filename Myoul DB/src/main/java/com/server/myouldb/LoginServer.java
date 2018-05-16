@@ -1,32 +1,35 @@
-package com.example.myouldb;
+package com.server.myouldb;
 
 import java.util.UUID;
 import java.sql.*;
 
-public class Login {
+public class LoginServer {
 
     private static String serverUser = "root";
     private static String serverPass = "Wasr13!!";
 
     public static String authorize(String user, String pass) {
 
-        if (verifyUser(user)) {
-            if (login(user, pass)) {
-                UUID id = UUID.randomUUID();
+        if (login(user, pass)) {
+            UUID id = UUID.randomUUID();
 
-                //verify and set uuid
+            while(!verifyUUID(id.toString()))
+                System.out.println("nonUniqueID!!!");
 
-                return id.toString();
-            }
+            while(!setUUID(id.toString(), user))
+                System.out.println("Failed to set unique ID");
+
+            return id.toString();
         }
         return("Login failed");
     }
 
-    private static boolean verifyUser(String user){
+
+    private static boolean login(String user, String pass){
         try (
                 // Step 1: Allocate a database 'Connection' object
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/Login?useSSL=true", serverUser, serverPass);
+                        "jdbc:mysql://localhost:3306/Myoul?useSSL=true", serverUser, serverPass);
                 // MySQL: "jdbc:mysql://hostname:port/databaseName", "username", "password"
 
                 // Step 2: Allocate a 'Statement' object in the Connection
@@ -34,16 +37,14 @@ public class Login {
         ) {
             // Step 3: Execute a SQL SELECT query, the query result
             //  is returned in a 'ResultSet' object.
-            String strSelect = new StringBuilder("select username from login where username = '").append(user).append("';").toString();
+            String strSelect = String.format("select username from login where username = '%s' and password = '%s';", user, pass);
 
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Step 4: Process the ResultSet by scrolling the cursor forward via next().
             //  For each row, retrieve the contents of the cells with getXxx(columnName).
             if(rset.next()) {   // Move the cursor to the next row, return false if no more row
-                String dbUser = rset.getString("username");
-                if(dbUser.equals(user))
-                    return true;
+                return true;
             }
             else
                 return false;
@@ -54,39 +55,40 @@ public class Login {
         // Step 5: Close the resources - Done automatically by try-with-resources
 
         return false;
-        }
+    }
 
-    private static boolean login(String user, String pass){
+
+    private static boolean verifyUUID(String uuid){
         try (
-                // Step 1: Allocate a database 'Connection' object
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/Login?useSSL=true", serverUser, serverPass);
-                // MySQL: "jdbc:mysql://hostname:port/databaseName", "username", "password"
-
-                // Step 2: Allocate a 'Statement' object in the Connection
+                        "jdbc:mysql://localhost:3306/Myoul?useSSL=true", serverUser, serverPass);
                 Statement stmt = conn.createStatement()
         ) {
-            // Step 3: Execute a SQL SELECT query, the query result
-            //  is returned in a 'ResultSet' object.
-            String strSelect = new StringBuilder("select username from login where username = '").append(user).append("' and password = '").append(pass).append("';").toString();
-
+            String strSelect = String.format("select uuid from login where uuid = '%s';", uuid);
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Step 4: Process the ResultSet by scrolling the cursor forward via next().
-            //  For each row, retrieve the contents of the cells with getXxx(columnName).
-            if(rset.next()) {   // Move the cursor to the next row, return false if no more row
-                String dbUser = rset.getString("username");
-                if(dbUser.equals(user))
-                    return true;
-            }
-            else
+            if(rset.next())
                 return false;
-
+            else
+                return true;
         } catch(SQLException ex) {
             ex.printStackTrace();
         }
-        // Step 5: Close the resources - Done automatically by try-with-resources
+        return false;
+    }
 
+    private static boolean setUUID(String uuid, String user){
+        try (
+                Connection conn = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/Myoul?useSSL=true", serverUser, serverPass);
+                Statement stmt = conn.createStatement()
+        ) {
+            String strSelect = String.format("update login set uuid = '%s', time = %d where username = '%s';", uuid, System.currentTimeMillis(), user);
+            stmt.executeQuery(strSelect);
+            return true;//should check that it was correctly set
+        } catch(SQLException ex) {
+            ex.printStackTrace();
+        }
         return false;
     }
 

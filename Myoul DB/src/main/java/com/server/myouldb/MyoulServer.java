@@ -1,11 +1,12 @@
-package com.example.myouldb;
+package com.server.myouldb;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class MyoulDB {
+public class MyoulServer {
 
     private static final int port = 3666;
     private static ServerSocket server;
@@ -41,10 +42,17 @@ public class MyoulDB {
                 ObjectInputStream stream = new ObjectInputStream(sock.getInputStream());
                 String input = (String)stream.readObject();
                 String[] cmd = input.split(" ");
-                if(cmd[0] == "login"){
-                    //run login script
+                String result = null;
+                if(cmd[0] == "login" && cmd.length == 3){
+                    result = LoginServer.authorize(cmd[1], cmd[2]);
+                    close(result);
                 }else
                     close("Invalid Command");
+
+                ObjectOutputStream outstream = new ObjectOutputStream(sock.getOutputStream());
+                outstream.writeObject(result);
+
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -53,7 +61,14 @@ public class MyoulDB {
         }
 
         private void close(String result){
-            //send result to client and shutdown this thread
+            try {
+                ObjectOutputStream stream = new ObjectOutputStream(sock.getOutputStream());
+                stream.writeObject(result);
+                stream.flush();
+                sock.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
