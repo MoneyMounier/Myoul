@@ -1,4 +1,4 @@
-package com.client.myouldb;
+package com.client.myoul;
 
 public class LoginClient {
 

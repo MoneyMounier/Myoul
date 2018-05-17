@@ -1,4 +1,4 @@
-package com.server.myouldb;
+package com.server.myoul;
 
 import java.util.UUID;
 import java.sql.*;

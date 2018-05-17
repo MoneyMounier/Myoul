@@ -1,4 +1,4 @@
-package com.server.myouldb;
+package com.server.myoul;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

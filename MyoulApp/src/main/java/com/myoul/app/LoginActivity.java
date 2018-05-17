@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.client.myouldb.LoginClient;
+import com.client.myoul.LoginClient;
 
 public class LoginActivity extends AppCompatActivity {
 

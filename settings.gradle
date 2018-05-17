@@ -1,1 +1,1 @@
-include ':app', ':Myoul DB', ':mysql-connector-java-8.0.11'
+include ':MyoulApp', ':MyoulServer', ':MyoulClient'

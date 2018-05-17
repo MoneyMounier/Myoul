@@ -1,4 +1,4 @@
-package com.client.myouldb;
+package com.client.myoul;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;

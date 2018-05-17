@@ -8,9 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Myoul DB" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/mysql-connector-java-8.0.11" />
+            <option value="$PROJECT_DIR$/MyoulApp" />
+            <option value="$PROJECT_DIR$/MyoulClient" />
+            <option value="$PROJECT_DIR$/MyoulServer" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
