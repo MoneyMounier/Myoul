@@ -29,7 +29,7 @@ public class LoginServer {
         try (
                 // Step 1: Allocate a database 'Connection' object
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/Myoul", serverUser, serverPass);
+                        "jdbc:mysql://127.0.0.1:3306/Myoul", serverUser, serverPass);
                 // MySQL: "jdbc:mysql://hostname:port/databaseName", "username", "password"
 
                 // Step 2: Allocate a 'Statement' object in the Connection
@@ -61,7 +61,7 @@ public class LoginServer {
     private static boolean verifyUUID(String uuid){
         try (
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/Myoul", serverUser, serverPass);
+                        "jdbc:mysql://127.0.0.1:3306/Myoul", serverUser, serverPass);
                 Statement stmt = conn.createStatement()
         ) {
             String strSelect = String.format("select uuid from login where uuid = '%s';", uuid);
@@ -80,7 +80,7 @@ public class LoginServer {
     private static boolean setUUID(String uuid, String user){
         try (
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/Myoul", serverUser, serverPass);
+                        "jdbc:mysql://127.0.0.1:3306/Myoul", serverUser, serverPass);
                 Statement stmt = conn.createStatement()
         ) {
             String strSelect = String.format("update login set uuid = '%s', time = %d where username = '%s';", uuid, System.currentTimeMillis(), user);

@@ -2,7 +2,9 @@ package com.client.myoul;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.SocketAddress;
 
 //connect to server, issue command, and wait for result
 public class MyoulClient extends Thread{
@@ -34,7 +36,8 @@ public class MyoulClient extends Thread{
     public void run(){
 
         try {
-            Socket sock = new Socket(address, port);
+            Socket sock = new Socket();
+            sock.connect(new InetSocketAddress(address, port), 1000);
 
             ObjectOutputStream out = new ObjectOutputStream(sock.getOutputStream());
             out.writeObject(cmd);
