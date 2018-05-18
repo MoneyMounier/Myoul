@@ -1,7 +1,11 @@
 package com.server.myoul;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.UUID;
-import java.sql.*;
 
 public class LoginServer {
 
@@ -9,6 +13,13 @@ public class LoginServer {
     private static String serverPass = "Wasr13!!";
 
     public static String authorize(String user, String pass) {
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        }
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         if (login(user, pass)) {
             UUID id = UUID.randomUUID();
