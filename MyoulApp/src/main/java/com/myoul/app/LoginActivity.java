@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //login script
-    public void sendMessage(View view) {
+    public void login(View view) {
         EditText editText = (EditText) findViewById(R.id.username);
         String user = editText.getText().toString();
         editText = (EditText) findViewById(R.id.password);
@@ -38,5 +38,10 @@ public class LoginActivity extends AppCompatActivity {
             //write error to screen
             ((TextView)findViewById(R.id.error)).setText(R.string.lerror);
         }
+    }
+
+    public void create(View view){
+        Intent intent = new Intent(this, CreateActivity.class);
+        startActivity(intent);
     }
 }
