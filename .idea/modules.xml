@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/MyoulApp/MyoulApp.iml" filepath="$PROJECT_DIR$/MyoulApp/MyoulApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyoulClient/MyoulClient.iml" filepath="$PROJECT_DIR$/MyoulClient/MyoulClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyoulServer/MyoulServer.iml" filepath="$PROJECT_DIR$/MyoulServer/MyoulServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" />
     </modules>
   </component>
 </project>

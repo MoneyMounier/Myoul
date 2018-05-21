@@ -9,12 +9,21 @@ import java.net.NetworkInterface;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
 public class MyoulServer {
+
+    private static final String serverUser = "root";
+    private static final String serverPass = "Wasr13!!";
+    private static final String jdbcConnect = "jdbc:mysql://localhost:3306/Myoul?useSSL=false";
 
     private static final int port = 3666;
     private static ServerSocket server;
@@ -61,6 +70,33 @@ public class MyoulServer {
 
         System.out.println(ipAddress);
         /////////////////////////
+    }
+
+    public static ResultSet query(String strStmt){
+        try{
+
+            Connection conn = DriverManager.getConnection(jdbcConnect, serverUser, serverPass);
+            Statement stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery(strStmt);
+            return rset;
+
+        } catch(SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    public static int update(String strStmt){
+        try {
+            Connection conn = DriverManager.getConnection(jdbcConnect, serverUser, serverPass);
+            Statement stmt = conn.createStatement();
+            int rset = stmt.executeUpdate(strStmt);
+            return rset;
+
+        } catch(SQLException ex) {
+            ex.printStackTrace();
+        }
+        return 0;
     }
 
     private static class Client extends Thread{

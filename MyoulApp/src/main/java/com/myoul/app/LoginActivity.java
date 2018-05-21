@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.password);
         String pass = editText.getText().toString();
 
-        String id = LoginClient.Login(user, pass, getString(R.string.schoolip), Integer.parseInt(getString(R.string.port)));
+        String id = LoginClient.Login(user, pass, getString(R.string.homeip), Integer.parseInt(getString(R.string.port)));
 
         if (id == null){
             ((TextView)findViewById(R.id.error)).setText(R.string.cerror);

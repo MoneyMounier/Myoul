@@ -9,6 +9,8 @@ import java.net.SocketAddress;
 //connect to server, issue command, and wait for result
 public class MyoulClient extends Thread{
 
+    private final int timeout = 10000;//timeout in ms
+
     private String cmd, address, result;
     private int port;
 
@@ -37,7 +39,7 @@ public class MyoulClient extends Thread{
 
         try {
             Socket sock = new Socket();
-            sock.connect(new InetSocketAddress(address, port), 1000);
+            sock.connect(new InetSocketAddress(address, port), timeout);
 
             ObjectOutputStream out = new ObjectOutputStream(sock.getOutputStream());
             out.writeObject(cmd);

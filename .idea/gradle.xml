@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/MyoulApp" />
             <option value="$PROJECT_DIR$/MyoulClient" />
             <option value="$PROJECT_DIR$/MyoulServer" />
+            <option value="$PROJECT_DIR$/jdbc" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
