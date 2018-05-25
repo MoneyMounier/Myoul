@@ -120,10 +120,15 @@ public class MyoulServer {
                 System.out.println(input);
                 String[] cmd = input.split(" ");
                 String result = null;
+
+                //commands called
                 if(cmd[0].equals("login") && cmd.length == 3){
                     result = LoginServer.authorize(cmd[1], cmd[2]);
                     close(result);
-                }else
+                }else if(cmd[0].equals("email") && cmd.length == 2) {
+                    EmailServer.sendTest(cmd[1]);
+                    close("Email sent");
+                } else
                     close("Invalid Command");
 
             } catch (Exception e) {

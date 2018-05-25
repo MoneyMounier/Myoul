@@ -8,6 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/JAF" />
+            <option value="$PROJECT_DIR$/JavaMail" />
             <option value="$PROJECT_DIR$/MyoulApp" />
             <option value="$PROJECT_DIR$/MyoulClient" />
             <option value="$PROJECT_DIR$/MyoulServer" />

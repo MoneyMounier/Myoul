@@ -27,6 +27,7 @@ public class MyoulClient extends Thread{
         client.start();
         try {
             client.join();
+            System.out.println(client.result);
             return client.result;
         } catch (InterruptedException e) {
             e.printStackTrace();

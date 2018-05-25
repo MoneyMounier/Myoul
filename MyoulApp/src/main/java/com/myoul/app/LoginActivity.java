@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.client.myoul.LoginClient;
+import com.client.myoul.MyoulClient;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void create(View view){
+        MyoulClient.query("email nick_mounier@yahoo.com", "mounien.ddns.net", 3666);
         Intent intent = new Intent(this, CreateActivity.class);
         startActivity(intent);
     }
