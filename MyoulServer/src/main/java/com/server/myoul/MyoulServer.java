@@ -145,7 +145,7 @@ public class MyoulServer {
             try {
                 System.out.println(result);
                 ObjectOutputStream stream = new ObjectOutputStream(sock.getOutputStream());
-                stream.writeObject(result);
+                stream.writeObject("result: " + result);
                 stream.flush();
                 sock.close();
             } catch (IOException e) {
