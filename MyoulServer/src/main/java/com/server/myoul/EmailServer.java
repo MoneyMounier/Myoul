@@ -13,8 +13,8 @@ import javax.mail.internet.MimeMessage;
 public class EmailServer {
 
     // Sender's email ID needs to be mentioned
-    private static final String user = "no-reply@myoul.com";
-    private static final String pass = "Wasr13!!";
+    private static final String user = "mouniernick";
+    private static final String pass = "W01206797";
 
 
     public static void sendEmail(String to, String subject, String content) {
@@ -22,12 +22,15 @@ public class EmailServer {
 
         // Get system properties
         Properties props = System.getProperties();
+        String host = "smtp.gmail.com";
+
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", "587");
 
         props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.ssl.trust", host);
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
 
         // Authorized the Session object.
         Session session = Session.getInstance(props, new javax.mail.Authenticator() {
