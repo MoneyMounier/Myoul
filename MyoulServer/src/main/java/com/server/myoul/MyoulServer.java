@@ -123,7 +123,7 @@ public class MyoulServer {
 
                 //commands called
                 if(cmd[0].equals("login") && cmd.length == 3){
-                    result = LoginServer.authorize(cmd[1], cmd[2]);
+                    result = LoginServer.authorize(cmd[1], cmd[2], cmd[3]);
                     close(result);
                 }else if(cmd[0].equals("email") && cmd.length == 2) {
                     EmailServer.sendTest(cmd[1]);

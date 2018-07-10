@@ -9,19 +9,17 @@ import java.util.UUID;
 
 public class LoginServer {
 
-    public static String authorize(String user, String pass) {
+    public static String authorize(String mac, String user, String pass) {
 
         if (login(user, pass)) {
-            UUID id = UUID.randomUUID();
 
-            while(verifyUUID(id.toString()))
-                System.out.println("nonUniqueID!!!");
-                id = UUID.randomUUID();
+            while(verifyMAC(mac))
+                System.out.println("mac address already signed in signout old address and continue");
 
-            while(!setUUID(id.toString(), user))
-                System.out.println("Failed to set unique ID");
+            while(!setMAC(mac, user))
+                System.out.println("Failed to set mac");
 
-            return id.toString();
+            return mac;
         }
         return("Login failed");
     }
@@ -45,9 +43,9 @@ public class LoginServer {
     }
 
 
-    private static boolean verifyUUID(String uuid){
+    private static boolean verifyMAC(String mac){
         try {
-            ResultSet rset = MyoulServer.query(String.format("select uuid from login where uuid = '%s';", uuid));
+            ResultSet rset = MyoulServer.query(String.format("select uuid from login where uuid = '%s';", mac));
 
             return rset.first();
 
@@ -58,8 +56,8 @@ public class LoginServer {
         return false;
     }
 
-    private static boolean setUUID(String uuid, String user){
-        int rset= MyoulServer.update(String.format("update login set uuid = '%s', time = %d where username = '%s';", uuid, System.currentTimeMillis(), user));
+    private static boolean setMAC(String mac, String user){
+        int rset= MyoulServer.update(String.format("update login set uuid = '%s', time = %d where username = '%s';", mac, System.currentTimeMillis(), user));
         if(rset != 0)
             return true;
         else
