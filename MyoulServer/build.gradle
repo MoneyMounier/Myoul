@@ -1,9 +1,9 @@
 apply plugin: 'java-library'
 
 dependencies {
-    implementation project(':jdbc')
     implementation project(':JAF')
     implementation project(':JavaMail')
+    implementation project(':jdbc')
 }
 
 sourceCompatibility = "1.8"

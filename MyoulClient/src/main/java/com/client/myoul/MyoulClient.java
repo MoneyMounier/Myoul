@@ -77,7 +77,11 @@ public class MyoulClient extends Thread{
                 NetworkInterface element = net.nextElement();
                 Enumeration<InetAddress> addresses = element.getInetAddresses();
 
-                while (addresses.hasMoreElements() && element.getHardwareAddress().length > 0 && !isVMMac(element.getHardwareAddress())) {
+                while (addresses.hasMoreElements()
+                        && element.getHardwareAddress() != null
+                        && element.getHardwareAddress().length > 0
+                        && !isVMMac(element.getHardwareAddress())) {
+
                     InetAddress ip = addresses.nextElement();
                     if (ip instanceof Inet4Address) {
 

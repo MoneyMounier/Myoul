@@ -122,7 +122,7 @@ public class MyoulServer {
                 String result = null;
 
                 //commands called
-                if(cmd[0].equals("login") && cmd.length == 3){
+                if(cmd[0].equals("login") && cmd.length == 4){
                     result = LoginServer.authorize(cmd[1], cmd[2], cmd[3]);
                     close(result);
                 }else if(cmd[0].equals("email") && cmd.length == 2) {

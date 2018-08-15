@@ -45,7 +45,7 @@ public class LoginServer {
 
     private static boolean verifyMAC(String mac){
         try {
-            ResultSet rset = MyoulServer.query(String.format("select uuid from login where uuid = '%s';", mac));
+            ResultSet rset = MyoulServer.query(String.format("select username from login where mac = '%s';", mac));
 
             return rset.first();
 
@@ -57,7 +57,7 @@ public class LoginServer {
     }
 
     private static boolean setMAC(String mac, String user){
-        int rset= MyoulServer.update(String.format("update login set uuid = '%s', time = %d where username = '%s';", mac, System.currentTimeMillis(), user));
+        int rset= MyoulServer.update(String.format("update login set mac = '%s', time = %d where username = '%s';", mac, System.currentTimeMillis(), user));
         if(rset != 0)
             return true;
         else
