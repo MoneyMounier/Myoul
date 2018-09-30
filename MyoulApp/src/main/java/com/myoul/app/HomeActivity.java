@@ -3,8 +3,11 @@ package com.myoul.app;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class HomeActivity extends AppCompatActivity {
+
+    public static final String LEAD = "com.myoul.app";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,5 +20,17 @@ public class HomeActivity extends AppCompatActivity {
         // Capture the layout's TextView and set the string as its text
         //TextView textView = findViewById(R.id.textView);
         //textView.setText(message);
+    }
+
+    public void deliver(View view){
+        Intent intent = new Intent(this, MapActivity.class);
+        intent.putExtra(LEAD, 'd');
+        startActivity(intent);
+    }
+
+    public void send(View view){
+        Intent intent = new Intent(this, MapActivity.class);
+        intent.putExtra(LEAD, 's');
+        startActivity(intent);
     }
 }

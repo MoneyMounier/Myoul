@@ -27,10 +27,13 @@ public class LoginActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.password);
         String pass = editText.getText().toString();
 
-        String id = LoginClient.Login(user, pass, getString(R.string.homeip), Integer.parseInt(getString(R.string.port)));
+        String id = null;//LoginClient.Login(user, pass, getString(R.string.homeip), Integer.parseInt(getString(R.string.port)));
 
         if (id == null){
-            ((TextView)findViewById(R.id.error)).setText(R.string.cerror);
+            //((TextView)findViewById(R.id.error)).setText(R.string.cerror);
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra(LEAD, id);
+            startActivity(intent);
         } else if (id.length() == 36){
             Intent intent = new Intent(this, HomeActivity.class);
             intent.putExtra(LEAD, id);
