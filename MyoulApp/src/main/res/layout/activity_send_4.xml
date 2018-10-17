@@ -32,6 +32,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="Payment"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
@@ -49,6 +50,7 @@
         android:layout_marginBottom="16dp"
         android:text="(C) MYOUL 2018"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/myoul-icon4"
@@ -63,6 +65,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Back"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="0.642"
@@ -80,6 +83,7 @@
         android:ems="10"
         android:inputType="datetime|date|time"
         android:text="Pickup time"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button23" />
@@ -94,6 +98,7 @@
         android:ems="10"
         android:inputType="datetime|date|time"
         android:text="Deliver time"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/myoul-icon5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +110,7 @@
         android:layout_height="wrap_content"
         android:text="Insert map"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="112dp" />
 </android.support.constraint.ConstraintLayout>

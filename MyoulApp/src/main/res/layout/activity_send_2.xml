@@ -15,6 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Back"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="0.642"
@@ -31,6 +32,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Package Characteristics"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +48,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Next"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
@@ -72,12 +75,13 @@
 
     <TextView
         android:id="@+id/copyright2"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="535dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(C) MYOUL 2018"
-        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="535dp" />
 
     <TextView
         android:id="@+id/textView10"
@@ -88,6 +92,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Fragile"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.205"
@@ -104,6 +109,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Living"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.665"
@@ -120,6 +126,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="If alive..."
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.123"
@@ -138,6 +145,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="Number of units"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,6 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Animal"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="47dp"
         tools:layout_editor_absoluteY="242dp" />
 
@@ -157,6 +166,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Agriculture"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="228dp"
         tools:layout_editor_absoluteY="242dp" />
 
@@ -165,7 +175,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Acceptable Live Things:"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="47dp"
         tools:layout_editor_absoluteY="329dp" />
+
+    <ListView
+        android:layout_width="368dp"
+        android:layout_height="141dp"
+        android:scrollbars="vertical"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="356dp" />
 
 </android.support.constraint.ConstraintLayout>

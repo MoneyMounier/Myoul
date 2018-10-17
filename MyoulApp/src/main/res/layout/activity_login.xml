@@ -15,6 +15,7 @@
         android:layout_marginBottom="216dp"
         android:onClick="login"
         android:text="Login"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/create"
@@ -28,6 +29,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/user"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -43,6 +45,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:text="@string/pass"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -52,10 +55,11 @@
         android:id="@+id/error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/blank"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -70,6 +74,7 @@
         android:layout_marginBottom="212dp"
         android:onClick="create"
         android:text="New Account"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -96,6 +101,7 @@
         android:layout_height="31dp"
         app:srcCompat="@drawable/logo"
         tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="116dp" />
+        tools:layout_editor_absoluteY="116dp"
+        android:visibility="visible" />
 
 </android.support.constraint.ConstraintLayout>

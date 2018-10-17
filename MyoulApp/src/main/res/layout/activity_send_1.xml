@@ -15,6 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Deliver By Date"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -28,6 +29,7 @@
         android:layout_height="wrap_content"
         android:text="(C) MYOUL 2018"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="173dp"
         tools:layout_editor_absoluteY="535dp" />
 
@@ -40,6 +42,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="ASAP"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.04"
@@ -51,9 +54,16 @@
         android:id="@+id/Date-button"
         android:layout_width="170dp"
         android:layout_height="170dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="18dp"
         android:text="MM/DD/YYYY"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="71dp" />
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/asap-button"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/textView9"
@@ -63,6 +73,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Pickup Time Slots"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/Copyright"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +88,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Morning"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/Copyright"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -92,6 +104,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Midday"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/Copyright"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -106,6 +119,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="Afternoon/Eary Evening"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
@@ -120,7 +134,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="419dp" />
+        tools:layout_editor_absoluteY="419dp"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button9"
@@ -129,6 +144,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="Manual"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,9 +154,12 @@
         android:id="@+id/button10"
         android:layout_width="65dp"
         android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Next"
-        tools:layout_editor_absoluteX="311dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/myoul-icon"

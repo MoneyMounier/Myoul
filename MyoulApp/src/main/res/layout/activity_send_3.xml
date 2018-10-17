@@ -33,6 +33,7 @@
         android:layout_marginBottom="16dp"
         android:text="(C) MYOUL 2018"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/myoul-icon4"
@@ -47,6 +48,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="Next"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
@@ -63,6 +65,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Delivery Class Size"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +81,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Back"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="0.642"
@@ -94,6 +98,7 @@
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="20dp"
         android:text="Bike (icon)"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/button16"
         app:layout_constraintEnd_toStartOf="@+id/button15"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,6 +112,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
         android:text="Sedan (icon)"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/button17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
@@ -119,6 +125,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:text="Mini Van (icon)"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button14" />
 
@@ -132,5 +139,6 @@
         android:text="Pickup (icon)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button16"
-        app:layout_constraintTop_toBottomOf="@+id/button15" />
+        app:layout_constraintTop_toBottomOf="@+id/button15"
+        android:visibility="visible" />
 </android.support.constraint.ConstraintLayout>
