@@ -27,8 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(C) MYOUL 2018"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="532dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="535dp" />
 
     <Button
         android:id="@+id/asap-button"
@@ -140,4 +141,17 @@
         android:text="Next"
         tools:layout_editor_absoluteX="311dp"
         tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/myoul-icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button9"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/myoul-icon"
+        tools:layout_editor_absoluteX="129dp" />
 </android.support.constraint.ConstraintLayout>
