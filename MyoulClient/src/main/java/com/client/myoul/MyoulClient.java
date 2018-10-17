@@ -56,12 +56,9 @@ public class MyoulClient extends Thread{
 
             sock.close();
 
-            //return result;
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        //return null;
     }
 
     public static String GetAddress(String addressType) {

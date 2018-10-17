@@ -3,11 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JAF/JAF.iml" filepath="$PROJECT_DIR$/JAF/JAF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JAF/JAF.iml" filepath="$PROJECT_DIR$/JAF/JAF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaMail/JavaMail.iml" filepath="$PROJECT_DIR$/JavaMail/JavaMail.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaMail/JavaMail.iml" filepath="$PROJECT_DIR$/JavaMail/JavaMail.iml" />
       <module fileurl="file://$PROJECT_DIR$/Myoul.iml" filepath="$PROJECT_DIR$/Myoul.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyoulApp/MyoulApp.iml" filepath="$PROJECT_DIR$/MyoulApp/MyoulApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyoulClient/MyoulClient.iml" filepath="$PROJECT_DIR$/MyoulClient/MyoulClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyoulServer/MyoulServer.iml" filepath="$PROJECT_DIR$/MyoulServer/MyoulServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" />
     </modules>
   </component>
