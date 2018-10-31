@@ -1,0 +1,12 @@
+place all client modules here
+
+module requirements:
+- an appropriate name ending in Client. ie: LoginClient which logs in a user
+- a public static method named after the class, (would be Login in the above example), which takes in:
+    - required information
+    - server address
+    - server port
+- this message should process input and format the command before sending it to MyoulClient.query(cmd, address, port)
+    - the command format is as follows: (full name of server module) (name of function in server module) arg0 arg1 arg2 ...
+                                    ie: "LoginServer authorize username password"
+- it will receive an object from the server which it must process and return as a string
