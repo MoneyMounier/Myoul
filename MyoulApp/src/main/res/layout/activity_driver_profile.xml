@@ -10,10 +10,15 @@
         android:id="@+id/button31"
         android:layout_width="wrap_content"
         android:layout_height="50"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="29dp"
         android:layout_marginEnd="64dp"
+        android:layout_marginBottom="23dp"
         android:text="Save Changes"
+        app:layout_constraintBottom_toTopOf="@+id/copyright10"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="462dp" />
+        app:layout_constraintStart_toEndOf="@+id/button27"
+        app:layout_constraintTop_toBottomOf="@+id/editText24" />
 
     <EditText
         android:id="@+id/editText19"
@@ -76,39 +81,50 @@
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="27dp"
         android:ems="10"
         android:inputType="text|number"
         android:text="Make"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:layout_constraintBottom_toTopOf="@+id/button27"
         app:layout_constraintEnd_toStartOf="@+id/editText24"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="396dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <EditText
         android:id="@+id/editText24"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:inputType="text|number"
         android:text="Model"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toStartOf="@+id/editText25"
-        tools:layout_editor_absoluteY="396dp" />
+        app:layout_constraintStart_toEndOf="@+id/editText23"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <EditText
         android:id="@+id/editText25"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginBottom="29dp"
         android:ems="10"
         android:inputType="text|number"
         android:text="License Plate"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:layout_constraintBottom_toTopOf="@+id/button31"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="396dp" />
+        app:layout_constraintStart_toEndOf="@+id/editText24"
+        app:layout_constraintTop_toBottomOf="@+id/editText21" />
 
     <EditText
         android:id="@+id/editText15"
@@ -204,11 +220,12 @@
         android:layout_height="50"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="41dp"
+        android:layout_marginBottom="55dp"
         android:text="Edit Info"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button31"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="462dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView30"

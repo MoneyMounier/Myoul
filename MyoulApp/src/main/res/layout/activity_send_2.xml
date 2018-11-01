@@ -77,11 +77,13 @@
         android:id="@+id/copyright2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="16dp"
         android:text="(C) MYOUL 2018"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="535dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView10"
@@ -156,35 +158,45 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="39dp"
         android:text="Animal"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="242dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintEnd_toStartOf="@+id/button4" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="66dp"
         android:text="Agriculture"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="228dp"
-        tools:layout_editor_absoluteY="242dp" />
+        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:layout_marginEnd="189dp"
+        android:layout_marginBottom="8dp"
         android:text="Acceptable Live Things:"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="329dp" />
+        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
         android:layout_width="368dp"
         android:layout_height="141dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="22dp"
         android:scrollbars="vertical"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="356dp" />
+        app:layout_constraintBottom_toTopOf="@+id/myoul-icon3"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
