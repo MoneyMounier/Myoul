@@ -8,13 +8,14 @@
 
 
     <ImageView
-        android:id="@+id/profile-pic2"
+        android:id="@+id/profile_image"
         android:layout_width="189dp"
         android:layout_height="163dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:contentDescription="@string/profile_image"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,131 +26,125 @@
         tools:srcCompat="@tools:sample/avatars[3]" />
 
     <TextView
-        android:id="@+id/userLocation2"
+        android:id="@+id/location"
         android:layout_width="164dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="380dp"
-        android:text="Location"
+        android:text="@string/location"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic"
-        app:layout_constraintTop_toBottomOf="@+id/userName"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
 
     <TextView
-        android:id="@+id/userName2"
+        android:id="@+id/name"
         android:layout_width="164dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
-        android:text="Name"
+        android:text="@string/name"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/userAge2"
+        android:id="@+id/age"
         android:layout_width="164dp"
         android:layout_height="31dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Age"
+        android:text="@string/age"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/deliver-icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic2"
-        app:layout_constraintTop_toBottomOf="@+id/userName2"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
-        android:id="@+id/userRating2"
+        android:id="@+id/rating"
         android:layout_width="163dp"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="332dp"
-        android:text="Rating"
+        android:text="@string/rating"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic"
-        app:layout_constraintTop_toBottomOf="@+id/userLocation"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <Button
-        android:id="@+id/profile-edit2"
+        android:id="@+id/profile-edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="288dp"
-        android:text="Edit Profile"
+        android:text="@string/edit_info"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile-pic"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/send-icon2"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="96dp"
-        android:text="Send (Icon)"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile-edit"
-        app:layout_constraintVertical_bias="0.108" />
-
-    <Button
-        android:id="@+id/deliver-icon"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:text="Deliver (Icon)"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="299dp" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <TextView
         android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(C) MYOUL 2018"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/copyright"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="535dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/myoul-icon" />
 
     <ImageView
-        android:id="@+id/myoul-icon2"
+        android:id="@+id/myoul-icon"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/app_name"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/myoul-icon"
-        tools:layout_editor_absoluteX="141dp" />
+        app:layout_constraintEnd_toStartOf="@+id/copyright"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/myoul_icon" />
+
+    <ImageButton
+        android:id="@+id/send_icon"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/common_google_signin_btn_text_dark"
+        android:contentDescription="@string/send_icon"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/myoul-icon"
+        app:layout_constraintEnd_toStartOf="@+id/deliver_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile-edit"
+        app:srcCompat="@drawable/shipping" />
+
+    <ImageButton
+        android:id="@+id/deliver_icon"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="51dp"
+        android:background="@color/common_google_signin_btn_text_dark"
+        android:contentDescription="@string/deliver_icon"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/copyright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/send_icon"
+        app:srcCompat="@drawable/delivering" />
+
 </android.support.constraint.ConstraintLayout>

@@ -7,77 +7,81 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button31"
+        android:id="@+id/save_changes"
         android:layout_width="wrap_content"
-        android:layout_height="50"
+        android:layout_height="50dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="29dp"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="23dp"
-        android:text="Save Changes"
-        app:layout_constraintBottom_toTopOf="@+id/copyright10"
+        android:text="@string/save_changes"
+        app:layout_constraintBottom_toTopOf="@+id/copyright"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button27"
-        app:layout_constraintTop_toBottomOf="@+id/editText24" />
+        app:layout_constraintStart_toEndOf="@+id/edit_info"
+        app:layout_constraintTop_toBottomOf="@+id/car_model" />
 
     <EditText
-        android:id="@+id/editText19"
+        android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="@string/age"
         android:inputType="number"
-        android:text="Age"
+        android:text="@string/age"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText18"
-        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+        app:layout_constraintStart_toEndOf="@+id/location"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <EditText
-        android:id="@+id/editText18"
-        android:layout_width="200"
+        android:id="@+id/location"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:hint="@string/location"
         android:inputType="text|textPostalAddress|number"
-        android:text="Location"
+        android:text="@string/location"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText14" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <EditText
-        android:id="@+id/editText20"
+        android:id="@+id/phone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:hint="@string/phone"
         android:inputType="phone"
-        android:text="Phone #"
+        android:text="@string/phone"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText18" />
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <EditText
-        android:id="@+id/editText21"
+        android:id="@+id/email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="@string/email"
         android:inputType="textEmailAddress|textWebEmailAddress"
-        android:text="Email"
+        android:text="@string/email"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText20"
-        app:layout_constraintTop_toBottomOf="@+id/editText18" />
+        app:layout_constraintStart_toEndOf="@+id/phone"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <EditText
-        android:id="@+id/editText23"
+        android:id="@+id/car_make"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -85,32 +89,34 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="27dp"
         android:ems="10"
+        android:hint="@string/car_make"
         android:inputType="text|number"
-        android:text="Make"
+        android:text="@string/car_make"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        app:layout_constraintBottom_toTopOf="@+id/button27"
-        app:layout_constraintEnd_toStartOf="@+id/editText24"
+        app:layout_constraintBottom_toTopOf="@+id/edit_info"
+        app:layout_constraintEnd_toStartOf="@+id/car_model"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintTop_toBottomOf="@+id/car_specs" />
 
     <EditText
-        android:id="@+id/editText24"
+        android:id="@+id/car_model"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
+        android:hint="@string/car_model"
         android:inputType="text|number"
-        android:text="Model"
+        android:text="@string/car_model"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        app:layout_constraintEnd_toStartOf="@+id/editText25"
-        app:layout_constraintStart_toEndOf="@+id/editText23"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintEnd_toStartOf="@+id/car_plate"
+        app:layout_constraintStart_toEndOf="@+id/car_make"
+        app:layout_constraintTop_toBottomOf="@+id/car_specs" />
 
     <EditText
-        android:id="@+id/editText25"
+        android:id="@+id/car_plate"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -118,90 +124,89 @@
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="29dp"
         android:ems="10"
+        android:hint="@string/car_plate"
         android:inputType="text|number"
-        android:text="License Plate"
+        android:text="@string/car_plate"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        app:layout_constraintBottom_toTopOf="@+id/button31"
+        app:layout_constraintBottom_toTopOf="@+id/save_changes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText24"
-        app:layout_constraintTop_toBottomOf="@+id/editText21" />
+        app:layout_constraintStart_toEndOf="@+id/car_model"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
-        android:id="@+id/editText15"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="@string/pass"
         android:inputType="textPassword|textWebPassword|numberPassword"
-        android:text="Password(?)"
+        android:text="@string/pass"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText14"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/rating" />
 
     <TextView
-        android:id="@+id/copyright10"
+        android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="16dp"
-        android:text="(C) MYOUL 2018"
+        android:text="@string/copyright"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/myoul-icon4"
-        app:layout_constraintTop_toBottomOf="@+id/button17" />
+        app:layout_constraintStart_toEndOf="@+id/myoul-icon" />
 
     <ImageView
-        android:id="@+id/myoul-icon11"
+        android:id="@+id/myoul-icon"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/app_name"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/copyright2"
-        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintEnd_toStartOf="@+id/copyright"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/myoul-icon" />
+        app:srcCompat="@drawable/myoul_icon" />
 
     <ImageView
-        android:id="@+id/avatar"
-        android:layout_width="150"
-        android:layout_height="150"
+        android:id="@+id/prrofile_image"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
         android:layout_marginStart="92dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="92dp"
+        android:contentDescription="@string/profile_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars[3]" />
 
     <EditText
-        android:id="@+id/editText14"
-        android:layout_width="200"
+        android:id="@+id/name"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
+        android:hint="@string/name"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/name"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintTop_toBottomOf="@+id/rating" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
@@ -209,38 +214,38 @@
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="16dp"
         android:text="(User Rating)"
-        app:layout_constraintBottom_toTopOf="@+id/editText15"
+        app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatar" />
+        app:layout_constraintTop_toBottomOf="@+id/prrofile_image" />
 
     <Button
-        android:id="@+id/button27"
+        android:id="@+id/edit_info"
         android:layout_width="wrap_content"
-        android:layout_height="50"
+        android:layout_height="50dp"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="41dp"
         android:layout_marginBottom="55dp"
-        android:text="Edit Info"
+        android:text="@string/edit_info"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button31"
+        app:layout_constraintEnd_toStartOf="@+id/save_changes"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/car_specs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="123dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="123dp"
         android:layout_marginBottom="16dp"
-        android:text="Vehicle Specifications"
+        android:text="@string/car_specs"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintBottom_toTopOf="@+id/editText23"
+        app:layout_constraintBottom_toTopOf="@+id/car_make"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText20" />
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
 
 </android.support.constraint.ConstraintLayout>

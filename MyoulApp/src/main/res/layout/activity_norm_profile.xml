@@ -7,147 +7,147 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button31"
+        android:id="@+id/save_changes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="64dp"
-        android:text="Save Changes"
+        android:text="@string/save_changes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText21" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
-        android:id="@+id/editText19"
+        android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="@string/age"
         android:inputType="number"
-        android:text="Age"
+        android:text="@string/age"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText18"
-        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+        app:layout_constraintStart_toEndOf="@+id/location"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <EditText
-        android:id="@+id/editText18"
-        android:layout_width="200"
+        android:id="@+id/location"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:hint="@string/location"
         android:inputType="text|textPostalAddress|number"
-        android:text="Location"
+        android:text="@string/location"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText14" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <EditText
-        android:id="@+id/editText20"
-        android:layout_width="0dp"
+        android:id="@+id/phone"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:hint="@string/phone"
         android:inputType="phone"
-        android:text="Phone #"
+        android:text="@string/phone"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText18" />
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <EditText
-        android:id="@+id/editText21"
-        android:layout_width="0dp"
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="62dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="@string/email"
         android:inputType="textEmailAddress|textWebEmailAddress"
-        android:text="Email"
+        android:text="@string/email"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText20"
-        app:layout_constraintTop_toBottomOf="@+id/editText18" />
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <EditText
-        android:id="@+id/editText15"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="@string/pass"
         android:inputType="textPassword|textWebPassword|numberPassword"
-        android:text="Password(?)"
+        android:text="@string/pass"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText14"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/rating" />
 
     <TextView
-        android:id="@+id/copyright10"
+        android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="16dp"
-        android:text="(C) MYOUL 2018"
+        android:text="@string/copyright"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/myoul-icon4"
-        app:layout_constraintTop_toBottomOf="@+id/button17" />
+        app:layout_constraintStart_toEndOf="@+id/myoul-icon" />
 
     <ImageView
-        android:id="@+id/myoul-icon11"
+        android:id="@+id/myoul-icon"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/app_name"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/copyright2"
-        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintEnd_toStartOf="@+id/copyright"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/myoul-icon" />
+        app:srcCompat="@drawable/myoul_icon" />
 
     <ImageView
-        android:id="@+id/avatar"
-        android:layout_width="200"
-        android:layout_height="200"
+        android:id="@+id/prrofile_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_marginStart="92dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="92dp"
+        android:contentDescription="@string/profile_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars[3]" />
 
     <EditText
-        android:id="@+id/editText14"
-        android:layout_width="200"
+        android:id="@+id/name"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="@string/name"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/name"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintTop_toBottomOf="@+id/rating" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
@@ -155,21 +155,21 @@
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="16dp"
         android:text="(User Rating)"
-        app:layout_constraintBottom_toTopOf="@+id/editText15"
+        app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatar" />
+        app:layout_constraintTop_toBottomOf="@+id/prrofile_image" />
 
     <Button
-        android:id="@+id/button27"
+        android:id="@+id/edit_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="41dp"
-        android:text="Edit Info"
-        app:layout_constraintEnd_toStartOf="@+id/button31"
+        android:text="@string/edit_info"
+        app:layout_constraintEnd_toStartOf="@+id/save_changes"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText20" />
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
 </android.support.constraint.ConstraintLayout>

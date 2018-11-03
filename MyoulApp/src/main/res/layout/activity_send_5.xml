@@ -7,90 +7,71 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/pmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Payment"
+        android:text="@string/pmt"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button18"
+        android:id="@+id/finish_button"
         android:layout_width="70dp"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="Finish"
+        android:text="@string/finish_button"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button19"
+        android:id="@+id/back_button"
         android:layout_width="65dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Back"
+        android:text="@string/back_button"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/copyright5"
+        android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="16dp"
-        android:text="(C) MYOUL 2018"
+        android:text="@string/copyright"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/myoul-icon4"
-        app:layout_constraintTop_toBottomOf="@+id/button17" />
+        app:layout_constraintStart_toEndOf="@+id/myoul-icon" />
 
     <ImageView
-        android:id="@+id/myoul-icon6"
+        android:id="@+id/myoul-icon"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/app_name"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/copyright2"
+        app:layout_constraintEnd_toStartOf="@+id/copyright"
         app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/myoul-icon" />
+        app:srcCompat="@drawable/myoul_icon" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/pmt_gateway"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -101,60 +82,64 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/pmt" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/delivery_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="149dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="@string/deliver_time"
         android:inputType="datetime|date|time"
-        android:text="Delivery time"
+        android:text="@string/deliver_time"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editText6"
+        app:layout_constraintBottom_toTopOf="@+id/pkg_desc"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/pmt_gateway" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/pkg_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="@string/pkg_desc"
         android:inputType="text|number"
-        android:text="Package description"
+        android:text="@string/pkg_desc"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editText8"
+        app:layout_constraintBottom_toTopOf="@+id/pickup_loc"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/pickup_loc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="@string/pickup_loc"
         android:inputType="textPersonName"
-        android:text="Pickup Address"
+        android:text="@string/pickup_loc"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editText12"
+        app:layout_constraintBottom_toTopOf="@+id/deliver_loc"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/deliver_loc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
+        android:hint="@string/deliver_loc"
         android:inputType="textPersonName"
-        android:text="Delivery address"
+        android:text="@string/deliver_loc"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/myoul-icon6"
+        app:layout_constraintBottom_toTopOf="@+id/myoul-icon"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
