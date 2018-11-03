@@ -9,7 +9,11 @@ import java.util.UUID;
 
 public class LoginServer {
 
-    public static String authorize(String mac, String user, String pass) {
+    public static String authorize(String[] cmd) {
+
+        String mac = cmd[2];
+        String user = cmd[3];
+        String pass = cmd[4];
 
         if (login(user, pass)) {
 

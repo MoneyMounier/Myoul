@@ -1,8 +1,11 @@
 package com.server.myoul;
 
+import com.sun.org.apache.xpath.internal.operations.Operation;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Method;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -33,6 +36,9 @@ public class MyoulServer {
         try {
             server = new ServerSocket(port);
             printAdresses();
+
+            //new thread to track logged in users
+
             while(true){
                 new Client(server.accept());
                 //create a new thread to handle the socket
@@ -119,9 +125,19 @@ public class MyoulServer {
                 String input = (String)stream.readObject();
                 System.out.println(input);
                 String[] cmd = input.split(" ");
-                String result = null;
 
                 //commands called
+                //command format "ClassName MethodName arg0 arg1 arg2 ..."
+                try {
+                    Class<?> cls = Class.forName(new StringBuilder("com.server.myoul.").append(cmd[0]).toString());
+                    Method meth = cls.getMethod(cmd[1], String[].class);
+                    Object result = meth.invoke(cmd);
+                } catch(Exception e){
+                    e.printStackTrace();
+                    close("Invalid Command");
+                }
+
+                /*
                 if(cmd[0].equals("login") && cmd.length == 4){
                     result = LoginServer.authorize(cmd[1], cmd[2], cmd[3]);
                     close(result);
@@ -130,6 +146,7 @@ public class MyoulServer {
                     close("Email sent");
                 } else
                     close("Invalid Command");
+                */
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -138,14 +155,16 @@ public class MyoulServer {
             close("error");
         }
 
-        private void close(String result){
+        private void close(Object result){
             if(sock.isClosed())
                 return;
 
             try {
+                //debug only
                 System.out.println(result);
+
                 ObjectOutputStream stream = new ObjectOutputStream(sock.getOutputStream());
-                stream.writeObject("result: " + result);
+                stream.writeObject(result);
                 stream.flush();
                 sock.close();
             } catch (IOException e) {
