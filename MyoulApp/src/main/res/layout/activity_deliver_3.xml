@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/button29"
-        android:layout_width="120"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="79dp"
@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button9"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/myoul-icon" />
+        app:srcCompat="@drawable/myoul_icon" />
 
     <TextView
         android:id="@+id/copyright8"
@@ -152,7 +152,7 @@
 
     <Button
         android:id="@+id/button28"
-        android:layout_width="120"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="79dp"

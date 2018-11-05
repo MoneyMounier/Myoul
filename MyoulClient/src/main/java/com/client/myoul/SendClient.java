@@ -8,7 +8,8 @@ public class SendClient {
 
     public static String send(float lat, float lon, String address, int port){
         String result = null;
-        result = MyoulClient.query(String.format("send %f %f", lat, lon), address, port);
+        //needs to be updated for new system
+        //result = MyoulClient.query(String.format("send %f %f", lat, lon), address, port);
         return result;
     }
 }

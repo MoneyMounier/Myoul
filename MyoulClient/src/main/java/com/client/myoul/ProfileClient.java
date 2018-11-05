@@ -9,7 +9,8 @@ public class ProfileClient {
     public static String all(String address, int port){
         String result = null;
         //server needs to know which profile to return
-        result = MyoulClient.query("profile all", address, port);
+        //needs to be updated for new system
+        //result = MyoulClient.query("profile all", address, port);
         return result;
     }
 }

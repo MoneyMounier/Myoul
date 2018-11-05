@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button9"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/myoul-icon" />
+        app:srcCompat="@drawable/myoul_icon" />
 
     <TextView
         android:id="@+id/copyright3"
@@ -120,8 +120,8 @@
 
     <Button
         android:id="@+id/button16"
-        android:layout_width="150"
-        android:layout_height="150"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:text="Mini Van (icon)"
@@ -131,8 +131,8 @@
 
     <Button
         android:id="@+id/button17"
-        android:layout_width="150"
-        android:layout_height="150"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"

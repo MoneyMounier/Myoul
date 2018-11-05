@@ -9,7 +9,7 @@
     <Button
         android:id="@+id/button31"
         android:layout_width="wrap_content"
-        android:layout_height="50"
+        android:layout_height="50dp"
         android:layout_marginEnd="64dp"
         android:text="Save Changes"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
 
     <EditText
         android:id="@+id/editText18"
-        android:layout_width="200"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
@@ -157,12 +157,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button9"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/myoul-icon" />
+        app:srcCompat="@drawable/myoul_icon" />
 
     <ImageView
         android:id="@+id/avatar"
-        android:layout_width="150"
-        android:layout_height="150"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="92dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="92dp"
@@ -173,7 +173,7 @@
 
     <EditText
         android:id="@+id/editText14"
-        android:layout_width="200"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -201,7 +201,7 @@
     <Button
         android:id="@+id/button27"
         android:layout_width="wrap_content"
-        android:layout_height="50"
+        android:layout_height="50dp"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="41dp"
         android:text="Edit Info"

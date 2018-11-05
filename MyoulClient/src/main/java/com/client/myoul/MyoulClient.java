@@ -11,28 +11,32 @@ import java.net.SocketAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Enumeration;
+import com.server.myoul.Message;
 
 //connect to server, issue command, and wait for result
 public class MyoulClient extends Thread{
 
     private final int timeout = 10000;//timeout in ms
 
-    private String cmd, serverAddress, result, hardAddress;
+    private Message message;
+    private String serverAddress, result, hardAddress;
     private int port;
 
-    public MyoulClient(String cmd, String address, int port) {
-        this.cmd = cmd;
+    public MyoulClient(Message message, String address, int port) {
+        this.message = message;
         this.serverAddress = address;
         this.port = port;
 
     }
 
-    public static String query(String cmd, String address, int port){
+    public static Object query(String cls, String meth, String cmd, String address, int port){
 
-        MyoulClient client = new MyoulClient(cmd, address, port);
+        Message message = new Message(cls, meth, cmd);
+        MyoulClient client = new MyoulClient(message, address, port);
         client.start();
         try {
             client.join();
+            //debug
             System.out.println(client.result);
             return client.result;
         } catch (InterruptedException e) {
@@ -49,7 +53,7 @@ public class MyoulClient extends Thread{
             sock.connect(new InetSocketAddress(serverAddress, port), timeout);
 
             ObjectOutputStream out = new ObjectOutputStream(sock.getOutputStream());
-            out.writeObject(cmd);
+            out.writeObject(message);
 
             ObjectInputStream in = new ObjectInputStream(sock.getInputStream());
             result = (String)in.readObject();

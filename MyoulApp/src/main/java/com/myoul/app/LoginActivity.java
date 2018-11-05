@@ -45,7 +45,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void create(View view){
-        MyoulClient.query("email nick_mounier@yahoo.com", "mounien.ddns.net", 3666);
+        //testing
+        //MyoulClient.query("email nick_mounier@yahoo.com", "mounien.ddns.net", 3666);
         Intent intent = new Intent(this, CreateActivity.class);
         startActivity(intent);
     }

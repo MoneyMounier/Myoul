@@ -122,31 +122,17 @@ public class MyoulServer {
             //handle actual connection
             try {
                 ObjectInputStream stream = new ObjectInputStream(sock.getInputStream());
-                String input = (String)stream.readObject();
-                System.out.println(input);
-                String[] cmd = input.split(" ");
+                Message input = (Message)stream.readObject();
 
-                //commands called
-                //command format "ClassName MethodName arg0 arg1 arg2 ..."
                 try {
-                    Class<?> cls = Class.forName(new StringBuilder("com.server.myoul.").append(cmd[0]).toString());
-                    Method meth = cls.getMethod(cmd[1], String[].class);
-                    Object result = meth.invoke(cmd);
-                } catch(Exception e){
-                    e.printStackTrace();
-                    close("Invalid Command");
-                }
+                    Class<?> cls = Class.forName(input.clsName);
+                    Method meth = cls.getMethod(input.methName, Message.class);
 
-                /*
-                if(cmd[0].equals("login") && cmd.length == 4){
-                    result = LoginServer.authorize(cmd[1], cmd[2], cmd[3]);
-                    close(result);
-                }else if(cmd[0].equals("email") && cmd.length == 2) {
-                    EmailServer.sendTest(cmd[1]);
-                    close("Email sent");
-                } else
-                    close("Invalid Command");
-                */
+                    close(meth.invoke(input));
+                } catch(Exception e) {
+                    e.printStackTrace();
+                    close("Invalid Message");
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -155,16 +141,16 @@ public class MyoulServer {
             close("error");
         }
 
-        private void close(Object result){
+        private void close(Object output){
             if(sock.isClosed())
                 return;
 
             try {
                 //debug only
-                System.out.println(result);
+                System.out.println(output);
 
                 ObjectOutputStream stream = new ObjectOutputStream(sock.getOutputStream());
-                stream.writeObject(result);
+                stream.writeObject(output);
                 stream.flush();
                 sock.close();
             } catch (IOException e) {
