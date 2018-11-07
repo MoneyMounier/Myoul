@@ -11,25 +11,23 @@ public class LoginServer {
 
     public static String authorize(Message message) {
 
-        String mac = message.cmd[0];
-        String user = message.cmd[1];
-        String pass = message.cmd[2];
+        String pass = message.cmd[0];
+        String user = message.user;
 
+        System.out.println(user + " " + pass);
+        return "great success!!!";
+
+        /*
         if (login(user, pass)) {
-
-            while(verifyMAC(mac))
-                System.out.println("mac address already signed in signout old address and continue");
-
-            while(!setMAC(mac, user))
-                System.out.println("Failed to set mac");
-
-            return mac;
+            return "Logged in";
         }
         return("Login failed");
+        */
     }
 
 
     private static boolean login(String user, String pass){
+
         try {
             ResultSet rset = MyoulServer.query(String.format("select username from login where username = '%s' and password = '%s';", user, pass));
 

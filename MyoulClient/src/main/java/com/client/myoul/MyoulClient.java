@@ -2,174 +2,118 @@ package com.client.myoul;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.Inet4Address;
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.net.NetworkInterface;
 import java.net.Socket;
-import java.net.SocketAddress;
-import java.net.SocketException;
-import java.net.UnknownHostException;
-import java.util.Enumeration;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.util.concurrent.SynchronousQueue;
 import com.server.myoul.Message;
+import javax.crypto.SealedObject;
 
 //connect to server, issue command, and wait for result
 public class MyoulClient extends Thread{
 
-    private final int timeout = 10000;//timeout in ms
 
-    private Message message;
-    private String serverAddress, result, hardAddress;
-    private int port;
+    public static Object query(String cls, String meth, String user, String cmd, String address, int port){
 
-    public MyoulClient(Message message, String address, int port) {
-        this.message = message;
-        this.serverAddress = address;
-        this.port = port;
-
-    }
-
-    public static Object query(String cls, String meth, String cmd, String address, int port){
-
-        Message message = new Message(cls, meth, cmd);
-        MyoulClient client = new MyoulClient(message, address, port);
-        client.start();
-        try {
-            client.join();
-            //debug
-            System.out.println(client.result);
-            return client.result;
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Message message = new Message(cls, meth, user, cmd);
+        //needs to be written
         return null;
     }
 
-    @Override
-    public void run(){
+    //non static methods and variables
+
+    private final int timeout = 10000;//timeout in ms
+
+    private String serverAddress;
+    private int port;
+
+    protected KeyPair keyPair;
+    //protected Cipher cipher;
+
+    public SynchronousQueue<Message> input;
+    public SynchronousQueue<Object> output;
+
+    public boolean send(Message message){
+        return input.offer(message);
+    }
+
+    public Object recieve(){
+        return output.poll();
+    }
+
+    public MyoulClient(String address, int port) {
+        super("MyoulClient");
+        this.serverAddress = address;
+        this.port = port;
 
         try {
+            //generates keys and inits cipher(might not need cipher)
+            KeyPairGenerator keyGen =  KeyPairGenerator.getInstance("EC");
+            keyPair = keyGen.generateKeyPair();
+            //cipher = Cipher.getInstance("ECIES", keyGen.getProvider());
+            //cipher.init(Cipher.DECRYPT_MODE, keyPair.getPrivate());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        input = new SynchronousQueue<>();
+        output = new SynchronousQueue<>();
+
+        this.start();
+    }
+
+    @Override
+    public void run() {
+        while(true){
+            try{
+                //wait for a message from another thread
+                Message message = input.take();
+                if (message != null) {
+                    //send and wait to recieve
+                    Object result = communicate(message);
+                    if(result != null){
+                        //offer the result, waiting for another thread to recieve it
+                        output.put(result);
+                    }
+                }
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private Object communicate(Message message){
+        try {
+            //get connection with the timeout value
             Socket sock = new Socket();
-            sock.connect(new InetSocketAddress(serverAddress, port), timeout);
+            Object result;
 
-            ObjectOutputStream out = new ObjectOutputStream(sock.getOutputStream());
-            out.writeObject(message);
+            sock.connect(new InetSocketAddress(this.serverAddress, this.port), this.timeout);
 
-            ObjectInputStream in = new ObjectInputStream(sock.getInputStream());
-            result = (String)in.readObject();
+            //send message
+            ObjectOutputStream output = new ObjectOutputStream(sock.getOutputStream());
+            output.writeObject(message);
 
-            sock.close();
+            //wait for response and close
+            ObjectInputStream input = new ObjectInputStream(sock.getInputStream());
+
+            boolean encrypted = input.readBoolean();
+
+            if(encrypted) {
+                //retrieve and decrypt the message
+                SealedObject sealedResult = (SealedObject) input.readObject();
+                sock.close();
+                return sealedResult.getObject(keyPair.getPrivate());
+            }else {
+                result = input.readObject();
+                sock.close();
+                return result;
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static String GetAddress(String addressType) {
-        String address = "";
-        InetAddress lanIp = null;
-        try {
-
-            String ipAddress = null;
-            Enumeration<NetworkInterface> net = null;
-            net = NetworkInterface.getNetworkInterfaces();
-
-            while (net.hasMoreElements()) {
-                NetworkInterface element = net.nextElement();
-                Enumeration<InetAddress> addresses = element.getInetAddresses();
-
-                while (addresses.hasMoreElements()
-                        && element.getHardwareAddress() != null
-                        && element.getHardwareAddress().length > 0
-                        && !isVMMac(element.getHardwareAddress())) {
-
-                    InetAddress ip = addresses.nextElement();
-                    if (ip instanceof Inet4Address) {
-
-                        if (ip.isSiteLocalAddress()) {
-                            ipAddress = ip.getHostAddress();
-                            lanIp = InetAddress.getByName(ipAddress);
-                        }
-
-                    }
-
-                }
-            }
-
-            if (lanIp == null)
-                return null;
-
-            if (addressType.equals("ip")) {
-
-                address = lanIp.toString().replaceAll("^/+", "");
-
-            } else if (addressType.equals("mac")) {
-
-                address = getMacAddress(lanIp);
-
-            } else {
-
-                throw new Exception("Specify \"ip\" or \"mac\"");
-
-            }
-
-        } catch (UnknownHostException ex) {
-
-            ex.printStackTrace();
-
-        } catch (SocketException ex) {
-
-            ex.printStackTrace();
-
-        } catch (Exception ex) {
-
-            ex.printStackTrace();
-
-        }
-
-        return address;
-
-    }
-
-    private static String getMacAddress(InetAddress ip) {
-        String address = null;
-        try {
-
-            NetworkInterface network = NetworkInterface.getByInetAddress(ip);
-            byte[] mac = network.getHardwareAddress();
-
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < mac.length; i++) {
-                sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));
-            }
-            address = sb.toString();
-
-        } catch (SocketException ex) {
-
-            ex.printStackTrace();
-
-        }
-
-        return address;
-    }
-
-    private static boolean isVMMac(byte[] mac) {
-        if(null == mac) return false;
-        byte invalidMacs[][] = {
-                {0x00, 0x05, 0x69},             //VMWare
-                {0x00, 0x1C, 0x14},             //VMWare
-                {0x00, 0x0C, 0x29},             //VMWare
-                {0x00, 0x50, 0x56},             //VMWare
-                {0x08, 0x00, 0x27},             //Virtualbox
-                {0x0A, 0x00, 0x27},             //Virtualbox
-                {0x00, 0x03, (byte)0xFF},       //Virtual-PC
-                {0x00, 0x15, 0x5D}              //Hyper-V
-        };
-
-        for (byte[] invalid: invalidMacs){
-            if (invalid[0] == mac[0] && invalid[1] == mac[1] && invalid[2] == mac[2]) return true;
-        }
-
-        return false;
+        return null;
     }
 }

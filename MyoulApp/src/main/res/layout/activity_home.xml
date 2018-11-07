@@ -36,8 +36,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic"
-        app:layout_constraintTop_toBottomOf="@+id/userName"
+        app:layout_constraintStart_toEndOf="@+id/profile-pic2"
+        app:layout_constraintTop_toBottomOf="@+id/userName2"
         app:layout_constraintVertical_bias="0.058" />
 
     <TextView
@@ -51,7 +51,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic"
+        app:layout_constraintStart_toEndOf="@+id/profile-pic2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -83,8 +83,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic"
-        app:layout_constraintTop_toBottomOf="@+id/userLocation"
+        app:layout_constraintStart_toEndOf="@+id/profile-pic2"
+        app:layout_constraintTop_toBottomOf="@+id/userLocation2"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -101,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile-pic"
+        app:layout_constraintTop_toBottomOf="@+id/profile-pic2"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -118,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile-edit"
+        app:layout_constraintTop_toBottomOf="@+id/profile-edit2"
         app:layout_constraintVertical_bias="0.108" />
 
     <Button
