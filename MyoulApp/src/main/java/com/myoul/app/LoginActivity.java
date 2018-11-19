@@ -23,10 +23,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //include in onCreate of all activities
         if(((Client)getApplication()).client == null)
             ((Client)getApplication()).client = new MyoulClient(getString(R.string.Nicksip), Integer.parseInt(getString(R.string.port)));
 
         client = ((Client)this.getApplication()).client;
+        //
     }
 
     //login script
@@ -38,9 +40,10 @@ public class LoginActivity extends AppCompatActivity {
 
         Message sent = LoginClient.Login(client, user, pass);
         //code for checking for and recieving a message
+        //TODO add timeout
         if(sent != null) {
             final Handler handler = new Handler();
-            final int delay = 500; //ms
+            final int delay = 100; //ms
             final UUID id = sent.id;
             handler.postDelayed(new Runnable() {
                 @Override
@@ -54,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }, delay);
         }
+        //
 
         //work on new recieve one that peirodically checks client until it finds something
 

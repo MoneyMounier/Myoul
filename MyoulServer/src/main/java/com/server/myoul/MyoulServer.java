@@ -29,8 +29,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
-import javax.crypto.Cipher;
-import javax.crypto.SealedObject;
 
 public class MyoulServer {
 
@@ -43,6 +41,7 @@ public class MyoulServer {
     private static ServerSocket server;
 
     protected static KeyPair kp;
+    //need key store
 
     public static void main(String[] args){
 
@@ -106,6 +105,7 @@ public class MyoulServer {
                     //step 3: get the users public key
                     if (clientKey == null) {
                         //check db first
+                        //TODO add timeout for private keys
                         ResultSet rset = MyoulServer.query(String.format("select key from activeUsers where username = '%s';", input.user));
                         if (rset.first()) {
                             byte[] bytes = rset.getBytes("key");

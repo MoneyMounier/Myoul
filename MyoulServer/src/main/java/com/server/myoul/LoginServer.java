@@ -12,7 +12,7 @@ public class LoginServer {
 
     public static String authorize(Message message, PublicKey key) {
 
-        String pass = message.cmd[0];
+        String pass = (String)message.args;
         String user = message.user;
 
         System.out.println(user + " " + pass);

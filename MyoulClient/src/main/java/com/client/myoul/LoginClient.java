@@ -22,6 +22,7 @@ public class LoginClient {
         else if(obj.getClass() == String.class)
             return (String)obj;
 
+        //debug
         System.out.println(obj.getClass());
         return "received invalid message";
     }

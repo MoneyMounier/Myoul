@@ -32,6 +32,7 @@ public class MyoulClient extends Thread{
     private ObjectOutputStream outStream;
     private ObjectInputStream inStream;
 
+    //put in key store
     protected KeyPair keyPair;
     protected PublicKey serverKey;
 
