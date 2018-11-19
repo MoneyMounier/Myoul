@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.client.myoul.LoginClient;
 import com.client.myoul.MyoulClient;
+import com.server.myoul.Message;
+
+import java.util.UUID;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -34,22 +36,24 @@ public class LoginActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.password);
         String pass = editText.getText().toString();
 
-        boolean sent = LoginClient.Login(client, user, pass);
-
+        Message sent = LoginClient.Login(client, user, pass);
         //code for checking for and recieving a message
-        final Handler handler = new Handler();
-        final int delay = 500; //ms
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                String temp = LoginClient.checkReply(client);
+        if(sent != null) {
+            final Handler handler = new Handler();
+            final int delay = 500; //ms
+            final UUID id = sent.id;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    String temp = LoginClient.checkReply(client, id);
 
-                if (temp == null)
-                    handler.postDelayed(this, delay);
-                else
-                    System.out.println(temp);
-            }
-        }, delay);
+                    if (temp == null)
+                        handler.postDelayed(this, delay);
+                    else
+                        System.out.println(temp);//handle message here
+                }
+            }, delay);
+        }
 
         //work on new recieve one that peirodically checks client until it finds something
 

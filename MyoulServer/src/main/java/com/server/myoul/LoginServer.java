@@ -1,5 +1,6 @@
 package com.server.myoul;
 
+import java.security.PublicKey;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,7 +10,7 @@ import java.util.UUID;
 
 public class LoginServer {
 
-    public static String authorize(Message message) {
+    public static String authorize(Message message, PublicKey key) {
 
         String pass = message.cmd[0];
         String user = message.user;
