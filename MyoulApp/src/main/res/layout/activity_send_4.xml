@@ -7,99 +7,110 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/myoul-icon"
+        android:id="@+id/myoul-icon5"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="140dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:contentDescription="@string/app_name"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/copyright"
+        app:layout_constraintEnd_toStartOf="@+id/copyright2"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button9"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/myoul_icon" />
 
     <Button
-        android:id="@+id/pmt_button"
+        android:id="@+id/button22"
         android:layout_width="90dp"
         android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/pmt_button"
+        android:layout_marginBottom="8dp"
+        android:text="Payment"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06" />
 
     <TextView
-        android:id="@+id/copyright"
+        android:id="@+id/copyright4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/copyright"
+        android:text="(C) MYOUL 2018"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/myoul-icon" />
+        app:layout_constraintStart_toEndOf="@+id/myoul-icon4"
+        app:layout_constraintTop_toBottomOf="@+id/button17" />
 
     <Button
-        android:id="@+id/back_button"
+        android:id="@+id/button23"
         android:layout_width="65dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/back_button"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Back"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/pickup_time"
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="327dp"
         android:layout_marginEnd="153dp"
         android:ems="10"
-        android:hint="@string/pickup_time"
         android:inputType="datetime|date|time"
-        android:text="@string/pickup_time"
+        android:text="Pickup time"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back_button" />
+        app:layout_constraintTop_toBottomOf="@+id/button23" />
 
     <EditText
-        android:id="@+id/deliver_time"
+        android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="153dp"
         android:layout_marginBottom="44dp"
         android:ems="10"
-        android:hint="@string/deliver_time"
         android:inputType="datetime|date|time"
-        android:text="@string/deliver_time"
+        android:text="Deliver time"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/myoul-icon"
+        app:layout_constraintBottom_toTopOf="@+id/myoul-icon5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pickup_time" />
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="111dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="110dp"
-        android:text="@string/title_activity_map"
+        android:text="Insert map"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="112dp" />
 </android.support.constraint.ConstraintLayout>

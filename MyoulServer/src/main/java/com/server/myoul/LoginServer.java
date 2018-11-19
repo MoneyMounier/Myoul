@@ -1,5 +1,6 @@
 package com.server.myoul;
 
+import java.security.PublicKey;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,27 +10,25 @@ import java.util.UUID;
 
 public class LoginServer {
 
-    public static String authorize(String[] cmd) {
+    public static String authorize(Message message, PublicKey key) {
 
-        String mac = cmd[2];
-        String user = cmd[3];
-        String pass = cmd[4];
+        String pass = message.cmd[0];
+        String user = message.user;
 
+        System.out.println(user + " " + pass);
+        return "great success!!!";
+
+        /*
         if (login(user, pass)) {
-
-            while(verifyMAC(mac))
-                System.out.println("mac address already signed in signout old address and continue");
-
-            while(!setMAC(mac, user))
-                System.out.println("Failed to set mac");
-
-            return mac;
+            return "Logged in";
         }
         return("Login failed");
+        */
     }
 
 
     private static boolean login(String user, String pass){
+
         try {
             ResultSet rset = MyoulServer.query(String.format("select username from login where username = '%s' and password = '%s';", user, pass));
 
