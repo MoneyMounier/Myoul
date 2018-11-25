@@ -29,7 +29,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
+
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SealedObject;
 
 public class MyoulServer {
@@ -42,7 +46,7 @@ public class MyoulServer {
     private static final int timeout = 10000;
     private static ServerSocket server;
 
-    protected static KeyPair kp;
+    protected static KeyPair keyPair;
 
     public static void main(String[] args){
 
@@ -52,7 +56,7 @@ public class MyoulServer {
 
             //generates keys
             KeyPairGenerator keyGen =  KeyPairGenerator.getInstance("RSA");
-            kp = keyGen.generateKeyPair();
+            keyPair = keyGen.generateKeyPair();
 
             //new thread to track logged in users
 
@@ -88,11 +92,14 @@ public class MyoulServer {
 
                 //step 0.1: send public key.
                 outStream = new ObjectOutputStream(sock.getOutputStream());
-                outStream.writeObject(kp.getPublic());
+                outStream.writeObject(keyPair.getPublic().getEncoded());
 
                 //step 0.2: wait up to 10 seconds for clients public key
                 inStream = new ObjectInputStream(sock.getInputStream());
-                PublicKey temp = (PublicKey) inStream.readObject();
+                X509EncodedKeySpec ks = new X509EncodedKeySpec((byte[])inStream.readObject());
+
+                KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+                PublicKey temp = keyFactory.generatePublic(ks);
 
                 //repeat steps 1 through 5 until connection is done
                 while (!sock.isClosed()) {
@@ -101,42 +108,43 @@ public class MyoulServer {
                     Container container = (Container) inStream.readObject();
 
                     //step 2: decrypt and continue
-                    Message input = container.getMessage(kp.getPrivate());//throws errors
+                    Message message = container.getMessage(keyPair.getPrivate());//throws errors
 
                     //step 3: get the users public key
                     if (clientKey == null) {
                         //check db first
-                        ResultSet rset = MyoulServer.query(String.format("select key from activeUsers where username = '%s';", input.user));
+
+                        /*ResultSet rset = MyoulServer.query(String.format("select key from activeUsers where username = '%s';", message.user));
                         if (rset.first()) {
                             byte[] bytes = rset.getBytes("key");
-                            KeyFactory keyFactory = KeyFactory.getInstance("EC");
                             X509EncodedKeySpec publicKeySpec = new X509EncodedKeySpec(bytes);
                             PublicKey dbtemp = keyFactory.generatePublic(publicKeySpec);
                             //if they dont equal that means someone is trying access from a new device/session if logging in let them otherwise tell em no
                             if(dbtemp.equals(temp)){
                                 clientKey = temp;
                             }
-                        }
+                        }*/ //no Database at the moment
 
                         //must be logging in, check to verify. return error if trying to run a method without logging in
-                        if (!(input.clsName.equals("com.server.myoul.LoginServer") && input.methName.equals("authorize"))) {
-                            returnObj("login required.", temp);
+                        if (!(message.clsName.equals("com.server.myoul.LoginServer") && message.methName.equals("authorize"))) {
+                            message.content = "login required.";
+                            returnObj(message, temp);
                         }
                         //login
                         else{
-                            Serializable obj = LoginServer.authorize(input, temp);
-                            returnObj(obj, temp);
+                            message = LoginServer.authorize(message, temp);
+                            returnObj(message, temp);
                         }
                     }
                     //run method and class provided in message
                     //what if someone manages to put a malicious class in server folder and runs its methods...
                     //step 5: run desired class and method
                     if (clientKey != null) {
-                        Class<?> cls = Class.forName(input.clsName);
-                        Method meth = cls.getMethod(input.methName, Message.class);
+                        Class<?> cls = Class.forName(message.clsName);
+                        Method meth = cls.getMethod(message.methName, Message.class);
 
-                        Serializable obj = (Serializable) meth.invoke(null, input);
-                        returnObj(obj, clientKey);
+                        Message result = (Message)meth.invoke(null, message);
+                        returnObj(result, clientKey);
                     }
                 }
             } catch (InvalidKeyException e) {
@@ -144,8 +152,6 @@ public class MyoulServer {
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-            } catch (SQLException e) {
                 e.printStackTrace();
             } catch (InvalidKeySpecException e) {
                 e.printStackTrace();
@@ -157,6 +163,12 @@ public class MyoulServer {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
                 e.printStackTrace();
+            } catch (NoSuchPaddingException e) {
+                e.printStackTrace();
+            } catch (IllegalBlockSizeException e) {
+                e.printStackTrace();
+            } catch (BadPaddingException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -166,11 +178,11 @@ public class MyoulServer {
             }
         }
 
-    private void returnObj(Serializable output, PublicKey key){
+    private void returnObj(Message output, PublicKey key){
             if(sock.isClosed())
                 return;
             try {
-                Container container = new Container(key, (Message)output, "ECIS");
+                Container container = new Container(key, output);
                 outStream.writeObject(container);
             } catch (Exception e) {
                 e.printStackTrace();

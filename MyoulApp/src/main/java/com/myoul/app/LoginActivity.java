@@ -37,7 +37,8 @@ public class LoginActivity extends AppCompatActivity {
         String pass = editText.getText().toString();
 
         Message sent = LoginClient.Login(client, user, pass);
-        //code for checking for and recieving a message
+
+        /////////////////////code for checking for and recieving a message
         if(sent != null) {
             final Handler handler = new Handler();
             final int delay = 500; //ms
@@ -54,8 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }, delay);
         }
-
-        //work on new recieve one that peirodically checks client until it finds something
+        //////////////////////
 
        /*if (sent){
             ((TextView)findViewById(R.id.error)).setText(R.string.cerror);
