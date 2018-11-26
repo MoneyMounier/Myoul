@@ -6,13 +6,19 @@ import java.io.ObjectOutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.security.InvalidKeyException;
+import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
+import java.security.spec.EncodedKeySpec;
+import java.security.spec.RSAPublicKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+
+import com.server.myoul.Container;
 import com.server.myoul.Message;
 import javax.crypto.Cipher;
 import javax.crypto.SealedObject;
@@ -32,15 +38,15 @@ public class MyoulClient extends Thread{
     private ObjectOutputStream outStream;
     private ObjectInputStream inStream;
 
-    //put in key store
+    //TODO key store
     protected KeyPair keyPair;
     protected PublicKey serverKey;
 
     //queues to transfer around data
-    public ConcurrentHashMap<Class<?>, Message> input;
-    public ConcurrentHashMap<UUID, Object> output;
+    public ConcurrentHashMap<String, Message> input;
+    public ConcurrentHashMap<UUID, Message> output;
 
-    public boolean send(Class<?> cls, Message message, boolean replace){
+    public boolean send(String cls, Message message, boolean replace){
         if(replace && input.containsKey(cls)) {
             input.replace(cls, message);
             return true;
@@ -53,7 +59,7 @@ public class MyoulClient extends Thread{
         }
     }
 
-    public Object recieve(UUID id){return output.remove(id);}
+    public Message recieve(UUID id){return output.remove(id);}
 
     public MyoulClient(String address, int port) {
         super("MyoulClient");
@@ -62,7 +68,7 @@ public class MyoulClient extends Thread{
 
         try {
             //generates keys
-            KeyPairGenerator keyGen =  KeyPairGenerator.getInstance("EC");
+            KeyPairGenerator keyGen =  KeyPairGenerator.getInstance("RSA");
             keyPair = keyGen.generateKeyPair();
 
         }catch (Exception e){
@@ -96,8 +102,6 @@ public class MyoulClient extends Thread{
   private class Communicate extends Thread{
 
         private final int timeout = 10000;//timeout in ms
-        Message message;
-        Object result;
 
         public Communicate(){
             this.start();
@@ -106,68 +110,51 @@ public class MyoulClient extends Thread{
         //TODO: rebuild for v3
         @Override
         public void run() {
+            Message message;
+            Message result;
+            Container container;
+
             try {
                 sock = new Socket();
                 sock.connect(new InetSocketAddress(serverAddress, port), timeout);
 
                 //step 0.1: send public key.
                 outStream = new ObjectOutputStream(sock.getOutputStream());
-                outStream.writeObject(keyPair.getPublic());
+                outStream.writeObject(keyPair.getPublic().getEncoded());
 
                 //step 0.2: wait up to 10 seconds for clients public key
                 inStream = new ObjectInputStream(sock.getInputStream());
-                PublicKey temp = (PublicKey) inStream.readObject();
+                X509EncodedKeySpec ks = new X509EncodedKeySpec((byte[])inStream.readObject());
+                serverKey = KeyFactory.getInstance("RSA").generatePublic(ks);
 
+                //repeat steps 1 to 5 until input is empty
                 while (!input.isEmpty()) {
-                    for(Map.Entry<Class<?>, Message> entry : input.entrySet()) {
-                        System.out.println("sending message");
-                        input.remove(entry.getKey());
-                        message = entry.getValue();
 
+                    //step 1: get all messages currently in hash map and process them
+                    for(Map.Entry<String, Message> entry : input.entrySet()) {
 
-                        //send message encrypting if key is provided
-                        if (serverKey == null) {
-                            //send unencrypted object
-                            ObjectOutputStream outStream = new ObjectOutputStream(sock.getOutputStream());
-                            outStream.writeObject("missing server key");
-                        } else {
-                            //seal message
-                            Cipher cipher = Cipher.getInstance("RSA");
-                            cipher.init(Cipher.ENCRYPT_MODE, serverKey);
-                            SealedObject sealedOutput = new SealedObject(output, cipher);
-                            //send it
-                            ObjectOutputStream stream = new ObjectOutputStream(sock.getOutputStream());
-                            stream.writeObject(sealedOutput);
-                        }
+                        //step 2: remove next message from hashmap (no order enforced)
+                        message = input.remove(entry.getKey());
 
+                        //step 3: seal it up and send it to server
+                        container = new Container(serverKey, message);
+                        outStream.writeObject(container);
 
-                        //wait for and process object
-                        ObjectInputStream inStream = new ObjectInputStream(sock.getInputStream());
-                        result = inStream.readObject();
+                        //step 4: wait for, recieve and decrypt result
+                        container = (Container)inStream.readObject();
+                        result = container.getMessage(keyPair.getPrivate());
 
-                        if (PublicKey.class.isAssignableFrom(result.getClass())) {
-                            System.out.println("got a key");
-
-                            serverKey = (PublicKey) result;
-                            //need to resend message
-                            input.put(entry.getKey(), message);
-                        } else if (result.getClass() == SealedObject.class)
-                            output.put(message.id, ((SealedObject) result).getObject(keyPair.getPrivate()));
-                        else
-                            output.put(message.id, result);//only used for unencrypted error messages
+                        //step 5: place result in output
+                        output.put(result.id, result);
                     }
                 }
             } catch(IOException e){
-                result = "IOException";
                 e.printStackTrace();
             } catch(ClassNotFoundException e){
-                result = "ClassNotFoundException";
                 e.printStackTrace();
             } catch(NoSuchAlgorithmException e){
-                result = "NoSuchAlgorithmException";
                 e.printStackTrace();
             } catch(InvalidKeyException e){
-                result = "InvalidKeyException";
                 e.printStackTrace();
             } catch(Exception e){
                 e.printStackTrace();

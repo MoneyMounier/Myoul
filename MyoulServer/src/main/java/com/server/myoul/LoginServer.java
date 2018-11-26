@@ -7,16 +7,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 public class LoginServer {
 
-    public static String authorize(Message message, PublicKey key) {
+    public static Message authorize(Message message, PublicKey key) {
 
-        String pass = (String)message.args;
+        String pass = (String)message.content;
         String user = message.user;
 
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         System.out.println(user + " " + pass);
-        return "great success!!!";
+        message.content =  "great success!!!";
+        return message;
 
         /*
         if (login(user, pass)) {
