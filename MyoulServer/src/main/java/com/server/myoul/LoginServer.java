@@ -1,35 +1,42 @@
 package com.server.myoul;
 
+import java.security.PublicKey;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 public class LoginServer {
 
-    public static String authorize(String[] cmd) {
+    public static Message authorize(Message message, PublicKey key) {
 
-        String mac = cmd[2];
-        String user = cmd[3];
-        String pass = cmd[4];
+        String pass = (String)message.content;
+        String user = message.user;
 
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(user + " " + pass);
+        message.content =  "great success!!!";
+        return message;
+
+        /*
         if (login(user, pass)) {
-
-            while(verifyMAC(mac))
-                System.out.println("mac address already signed in signout old address and continue");
-
-            while(!setMAC(mac, user))
-                System.out.println("Failed to set mac");
-
-            return mac;
+            return "Logged in";
         }
         return("Login failed");
+        */
     }
 
 
     private static boolean login(String user, String pass){
+
         try {
             ResultSet rset = MyoulServer.query(String.format("select username from login where username = '%s' and password = '%s';", user, pass));
 

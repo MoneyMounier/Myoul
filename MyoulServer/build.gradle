@@ -5,6 +5,3 @@ dependencies {
     implementation project(':JAF')
     implementation project(':JavaMail')
 }
-
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"

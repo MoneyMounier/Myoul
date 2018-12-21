@@ -7,163 +7,161 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/accept_button"
+        android:id="@+id/button29"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="79dp"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="101dp"
-        android:text="@string/accept_button"
+        android:text="Accept"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/decline_button"
-        app:layout_constraintTop_toBottomOf="@+id/map_route"
+        app:layout_constraintStart_toEndOf="@+id/button28"
+        app:layout_constraintTop_toBottomOf="@+id/textView25"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/back_button"
+        android:id="@+id/button26"
         android:layout_width="65dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/back_button"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Back"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/myoul-icon"
+        android:id="@+id/myoul-icon9"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="140dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:contentDescription="@string/app_name"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/copyright"
+        app:layout_constraintEnd_toStartOf="@+id/copyright2"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button9"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/myoul_icon" />
 
     <TextView
-        android:id="@+id/copyright"
+        android:id="@+id/copyright8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/copyright"
+        android:text="(C) MYOUL 2018"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/myoul-icon" />
+        app:layout_constraintStart_toEndOf="@+id/myoul-icon4"
+        app:layout_constraintTop_toBottomOf="@+id/button17" />
 
     <ImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/profile_image"
+        android:layout_marginEnd="19dp"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/pkg_class"
+        app:layout_constraintEnd_toStartOf="@+id/textView20"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back_button"
+        app:layout_constraintTop_toBottomOf="@+id/button26"
         tools:srcCompat="@tools:sample/avatars[2]" />
 
     <TextView
-        android:id="@+id/caption"
+        android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="221dp"
-        android:layout_marginBottom="60dp"
         android:text="(Customer provided photo)"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/map_route"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="217dp" />
 
     <TextView
-        android:id="@+id/pkg_class"
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="81dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/pkg_class"
+        android:text="Pkg Class"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/extra_chara1"
-        app:layout_constraintStart_toEndOf="@+id/profile_image"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        tools:layout_editor_absoluteY="81dp" />
 
     <TextView
-        android:id="@+id/extra_chara1"
+        android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="4dp"
-        android:text="@string/extra_chara"
+        android:text="Extra Characteristic 1"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/extra_chara2"
-        app:layout_constraintStart_toEndOf="@+id/profile_image" />
+        app:layout_constraintBottom_toTopOf="@+id/textView23"
+        app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/extra_chara2"
+        android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="4dp"
-        android:text="@string/extra_chara"
+        android:text="Extra Characteristic 2"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/extra_chara3"
-        app:layout_constraintStart_toEndOf="@+id/profile_image" />
+        app:layout_constraintBottom_toTopOf="@+id/textView24"
+        app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/extra_chara3"
+        android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/extra_chara"
+        android:layout_marginBottom="17dp"
+        android:text="Extra Characteristic 2"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/caption"
-        app:layout_constraintStart_toEndOf="@+id/profile_image" />
+        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/map_route"
+        android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="104dp"
         android:text="Insert route"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caption" />
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="293dp" />
 
     <Button
-        android:id="@+id/decline_button"
+        android:id="@+id/button28"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="79dp"
-        android:layout_marginBottom="53dp"
-        android:text="@string/decline_button"
+        android:layout_marginBottom="101dp"
+        android:text="Decline"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/myoul-icon"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map_route" />
+        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
