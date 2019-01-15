@@ -9,7 +9,7 @@ public class LoginClient {
     public static Message Login(MyoulClient client, String user, String pass){
         Message message = new Message("LoginServer", "authorize", user);
         message.content = pass;
-        if(client.send(LoginClient.class, message, false))
+        if(client.send(LoginClient.class.getName(), message, false))
             return message;
         else
             return null;

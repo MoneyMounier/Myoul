@@ -48,6 +48,9 @@ public class MyoulServer {
 
     protected static KeyPair keyPair;
 
+
+    //TODO: when no connection can be made to database
+
     public static void main(String[] args){
 
         try {

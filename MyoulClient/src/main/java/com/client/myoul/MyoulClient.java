@@ -38,14 +38,15 @@ public class MyoulClient extends Thread{
     private ObjectOutputStream outStream;
     private ObjectInputStream inStream;
 
+    //TODO key store
     protected KeyPair keyPair;
     protected PublicKey serverKey;
 
     //queues to transfer around data
-    public ConcurrentHashMap<Class<?>, Message> input;
+    public ConcurrentHashMap<String, Message> input;
     public ConcurrentHashMap<UUID, Message> output;
 
-    public boolean send(Class<?> cls, Message message, boolean replace){
+    public boolean send(String cls, Message message, boolean replace){
         if(replace && input.containsKey(cls)) {
             input.replace(cls, message);
             return true;
@@ -130,7 +131,7 @@ public class MyoulClient extends Thread{
                 while (!input.isEmpty()) {
 
                     //step 1: get all messages currently in hash map and process them
-                    for(Map.Entry<Class<?>, Message> entry : input.entrySet()) {
+                    for(Map.Entry<String, Message> entry : input.entrySet()) {
 
                         //step 2: remove next message from hashmap (no order enforced)
                         message = input.remove(entry.getKey());
@@ -138,8 +139,6 @@ public class MyoulClient extends Thread{
                         //step 3: seal it up and send it to server
                         container = new Container(serverKey, message);
                         outStream.writeObject(container);
-
-
 
                         //step 4: wait for, recieve and decrypt result
                         container = (Container)inStream.readObject();
