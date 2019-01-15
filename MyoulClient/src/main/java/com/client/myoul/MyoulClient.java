@@ -16,6 +16,7 @@ import java.security.spec.RSAPublicKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Map;
 import java.util.UUID;
+import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.server.myoul.Container;
@@ -27,7 +28,9 @@ public class MyoulClient extends Thread{
 
     //TODO: write standalone client for website
     public static Object query(){
-        //needs to be written
+
+        Runnable[][] functions = {{(int i) -> i+1}};
+
         return null;
     }
 

@@ -3,15 +3,10 @@ package com.server.myoul;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.Inet4Address;
-import java.net.InetAddress;
-import java.net.NetworkInterface;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketException;
 import java.security.InvalidKeyException;
 import java.security.KeyFactory;
 import java.security.KeyPair;
@@ -25,22 +20,17 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.List;
 
 import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SealedObject;
 
 public class MyoulServer {
 
-    private static final String serverUser = "root";
-    private static final String serverPass = "Wasr13!!";
-    private static final String jdbcConnect = "jdbc:mysql://localhost:3306/Myoul?useSSL=false";
+    private static final String DBUser = "root";
+    private static final String DBPass = "Wasr13!!";
+    private static final String DBURL = "jdbc:mysql://35.233.200.9/myoul";
+    private static final String DBDriver = "com.mysql.jdbc.Driver";
 
     private static final int port = 3666;
     private static final int timeout = 10000;
@@ -52,10 +42,20 @@ public class MyoulServer {
     //TODO: when no connection can be made to database
 
     public static void main(String[] args){
+        //checking connection to database
+        try {
+            ResultSet rset = MyoulServer.query(String.format("select username from login where username = 'dev' and password = 'password';"));
+            if (rset.first()) {
+                System.out.println("Logged in");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        ////////////
 
         try {
             server = new ServerSocket(port);
-            printAdresses();
+            System.out.println("Server Started");
 
             //generates keys
             KeyPairGenerator keyGen =  KeyPairGenerator.getInstance("RSA");
@@ -195,57 +195,33 @@ public class MyoulServer {
 
     public static int update(String strStmt){
         try {
-            Connection conn = DriverManager.getConnection(jdbcConnect, serverUser, serverPass);
+            Class.forName(DBDriver);
+            Connection conn = DriverManager.getConnection(DBURL, DBUser, DBPass);
             Statement stmt = conn.createStatement();
             int rset = stmt.executeUpdate(strStmt);
             return rset;
 
         } catch(SQLException ex) {
             ex.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
         return 0;
     }
 
     public static ResultSet query(String strStmt){
         try{
-
-            Connection conn = DriverManager.getConnection(jdbcConnect, serverUser, serverPass);
+            Class.forName(DBDriver);
+            Connection conn = DriverManager.getConnection(DBURL, DBUser, DBPass);
             Statement stmt = conn.createStatement();
             ResultSet rset = stmt.executeQuery(strStmt);
             return rset;
 
         } catch(SQLException ex) {
             ex.printStackTrace();
-        }
-        return null;
-    }
-
-    private static void printAdresses(){
-        ///////////////////////////////
-        //prints addresses server is listening to on in console
-        List<String> addresses = new ArrayList<String>();
-        try {
-            Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
-            for(NetworkInterface ni : Collections.list(interfaces)){
-                for(InetAddress address : Collections.list(ni.getInetAddresses()))
-                {
-                    if(address instanceof Inet4Address){
-                        addresses.add(address.getHostAddress());
-                    }
-                }
-            }
-        } catch (SocketException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-        // Print the contents of our array to a string.  Yeah, should have used StringBuilder
-        String ipAddress = new String("");
-        for(String str:addresses)
-        {
-            ipAddress = ipAddress + str + "\n";
-        }
-
-        System.out.println(ipAddress);
-        /////////////////////////
+        return null;
     }
 }
