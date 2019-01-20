@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         if(((Client)getApplication()).client == null)
-            ((Client)getApplication()).client = new MyoulClient(getString(R.string.Nicksip), Integer.parseInt(getString(R.string.port)));
+            ((Client)getApplication()).client = new MyoulClient(getString(R.string.ip), Integer.parseInt(getString(R.string.port)));
 
         client = ((Client)this.getApplication()).client;
     }
