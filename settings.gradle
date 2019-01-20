@@ -1,1 +1,1 @@
-include ':MyoulApp', ':MyoulServer', ':MyoulClient', ':jdbc', ':JAF', ':JavaMail'
+include ':MyoulApp'

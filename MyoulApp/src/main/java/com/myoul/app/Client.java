@@ -2,7 +2,7 @@ package com.myoul.app;
 
 import android.app.Application;
 
-import com.client.myoul.MyoulClient;
+//import com.client.myoul.MyoulClient;
 
 /**
  * Created by nick_ on 11/6/2018.
@@ -10,5 +10,5 @@ import com.client.myoul.MyoulClient;
 
 public class Client extends Application {
 
-    MyoulClient client;
+    //MyoulClient client;
 }
