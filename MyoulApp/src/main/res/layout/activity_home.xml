@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/profile-pic2"
-        android:layout_width="189dp"
+        android:layout_width="200dp"
         android:layout_height="163dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.136"
+        app:layout_constraintVertical_bias="0.172"
         tools:srcCompat="@tools:sample/avatars[3]" />
 
     <TextView
@@ -29,63 +29,68 @@
         android:layout_width="164dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="380dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Location"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic2"
-        app:layout_constraintTop_toBottomOf="@+id/userName2"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintHorizontal_bias="0.965"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.188" />
 
     <TextView
         android:id="@+id/userName2"
-        android:layout_width="164dp"
-        android:layout_height="39dp"
+        android:layout_width="198dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Name"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.081" />
 
     <TextView
         android:id="@+id/userAge2"
         android:layout_width="164dp"
         android:layout_height="31dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Age"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/deliver-icon"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic2"
-        app:layout_constraintTop_toBottomOf="@+id/userName2"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintHorizontal_bias="0.965"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
 
     <TextView
         android:id="@+id/userRating2"
-        android:layout_width="163dp"
-        android:layout_height="43dp"
+        android:layout_width="167dp"
+        android:layout_height="56dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="332dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Rating"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile-pic2"
-        app:layout_constraintTop_toBottomOf="@+id/userLocation2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.978"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.254" />
 
     <Button
         android:id="@+id/profile-edit2"
@@ -99,10 +104,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile-pic2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02" />
 
     <Button
         android:id="@+id/send-icon2"
@@ -111,45 +116,47 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="8dp"
         android:text="Send (Icon)"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile-edit2"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
 
     <Button
         android:id="@+id/deliver-icon"
-        android:layout_width="170dp"
+        android:layout_width="167dp"
         android:layout_height="170dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Deliver (Icon)"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="299dp" />
-
-    <TextView
-        android:id="@+id/copyright"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="(C) MYOUL 2018"
-        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="535dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
 
     <ImageView
         android:id="@+id/myoul-icon2"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/myoul_icon"
-        tools:layout_editor_absoluteX="141dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.987"
+        app:srcCompat="@drawable/myoul_icon" />
 </android.support.constraint.ConstraintLayout>

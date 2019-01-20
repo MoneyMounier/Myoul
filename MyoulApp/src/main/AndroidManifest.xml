@@ -3,7 +3,6 @@
     package="com.myoul.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -19,6 +18,8 @@
         android:roundIcon="@drawable/myoul_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CompleteDeliveryActivity"></activity>
+        <activity android:name=".EditProfileActivity" />
         <activity
             android:name=".LoginActivity"
             android:noHistory="true">
@@ -49,7 +50,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.myoul.app.HomeActivity" />
         </activity>
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
     </application>
 
 </manifest>

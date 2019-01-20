@@ -10,7 +10,7 @@
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="96dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="216dp"
         android:onClick="login"
@@ -19,7 +19,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/create"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.177" />
 
     <EditText
         android:id="@+id/username"
@@ -86,22 +86,32 @@
         android:id="@+id/login-icon"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/error"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07999998"
-        app:srcCompat="@drawable/myoul_icon"
-        tools:layout_editor_absoluteX="142dp" />
+        app:srcCompat="@drawable/myoul_icon" />
 
     <ImageView
         android:id="@+id/myoul_logo"
         android:layout_width="132dp"
         android:layout_height="31dp"
-        app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="116dp"
-        android:visibility="visible" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/error"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login-icon"
+        app:layout_constraintVertical_bias="0.047"
+        app:srcCompat="@drawable/logo" />
 
 </android.support.constraint.ConstraintLayout>

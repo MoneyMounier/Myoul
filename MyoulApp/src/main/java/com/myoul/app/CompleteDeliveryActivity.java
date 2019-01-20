@@ -3,7 +3,9 @@ package com.myoul.app;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CreateActivity extends AppCompatActivity {
+public class CompleteDeliveryActivity extends AppCompatActivity {
+
+    public static final String LEAD = "com.myoul.app";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

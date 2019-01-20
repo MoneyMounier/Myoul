@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //login script
     public void login(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, CompleteDeliveryActivity.class);
         startActivity(intent);
     }
 
