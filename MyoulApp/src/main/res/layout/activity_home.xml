@@ -130,7 +130,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile-edit2"
         app:srcCompat="@drawable/shipping" />
@@ -139,8 +139,8 @@
         android:id="@+id/imageView5"
         android:layout_width="170dp"
         android:layout_height="150dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userAge2"
         app:srcCompat="@drawable/delivering" />
