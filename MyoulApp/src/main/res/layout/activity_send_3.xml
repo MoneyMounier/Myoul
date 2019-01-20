@@ -4,23 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
 
     <ImageView
         android:id="@+id/myoul-icon4"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="141dp"
         android:layout_marginBottom="16dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/copyright2"
-        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/myoul_icon" />
 
     <TextView
@@ -31,7 +26,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="16dp"
-        android:text="(C) MYOUL 2018"
+        android:text="@string/copyright"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,18 +38,13 @@
         android:id="@+id/button12"
         android:layout_width="65dp"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="Next"
+        android:background="@drawable/button_shape"
+        android:text="@string/next_button"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView14"
@@ -64,7 +54,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Delivery Class Size"
+        android:text="@string/class_size"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,16 +68,11 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Back"
+        android:background="@drawable/button_shape"
+        android:text="@string/back_button"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button14"
@@ -97,7 +82,8 @@
         android:layout_marginTop="51dp"
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="20dp"
-        android:text="Bike (icon)"
+        android:text="@string/bike_class"
+        android:background="@drawable/button_shape"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/button16"
         app:layout_constraintEnd_toStartOf="@+id/button15"
@@ -111,7 +97,8 @@
         android:layout_marginTop="51dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
-        android:text="Sedan (icon)"
+        android:text="@string/sedan_class"
+        android:background="@drawable/button_shape"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/button17"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,7 +111,8 @@
         android:layout_height="150dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:text="Mini Van (icon)"
+        android:text="@string/van_class"
+        android:background="@drawable/button_shape"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button14" />
@@ -136,7 +124,8 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:text="Pickup (icon)"
+        android:text="@string/pickup_class"
+        android:background="@drawable/button_shape"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button16"
         app:layout_constraintTop_toBottomOf="@+id/button15"

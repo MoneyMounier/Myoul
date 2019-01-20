@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context="com.myoul.app.HomeActivity">
 
 
@@ -12,16 +13,13 @@
         android:layout_width="189dp"
         android:layout_height="163dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.136"
         tools:srcCompat="@tools:sample/avatars[3]" />
 
     <TextView
@@ -31,7 +29,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="380dp"
-        android:text="Location"
+        android:text="@string/location"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +45,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
-        android:text="Name"
+        android:text="@string/name"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -59,16 +57,13 @@
         android:layout_width="164dp"
         android:layout_height="31dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Age"
+        android:text="@string/age"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/deliver-icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/profile-pic2"
-        app:layout_constraintTop_toBottomOf="@+id/userName2"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintTop_toBottomOf="@+id/userRating2" />
 
     <TextView
         android:id="@+id/userRating2"
@@ -78,7 +73,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="332dp"
-        android:text="Rating"
+        android:text="@string/rating1"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,13 +84,14 @@
 
     <Button
         android:id="@+id/profile-edit2"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="288dp"
-        android:text="Edit Profile"
+        android:background="@drawable/button_shape"
+        android:text="@string/edit_info"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,52 +100,48 @@
         app:layout_constraintTop_toBottomOf="@+id/profile-pic2"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/send-icon2"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="96dp"
-        android:text="Send (Icon)"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile-edit2"
-        app:layout_constraintVertical_bias="0.108" />
-
-    <Button
-        android:id="@+id/deliver-icon"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:text="Deliver (Icon)"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="299dp" />
-
     <TextView
         android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(C) MYOUL 2018"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/copyright"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="535dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/myoul-icon2" />
 
     <ImageView
         android:id="@+id/myoul-icon2"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="141dp"
         android:layout_marginBottom="16dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/myoul_icon"
-        tools:layout_editor_absoluteX="141dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/myoul_icon" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile-edit2"
+        app:srcCompat="@drawable/shipping" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userAge2"
+        app:srcCompat="@drawable/delivering" />
 </android.support.constraint.ConstraintLayout>

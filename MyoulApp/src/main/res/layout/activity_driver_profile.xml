@@ -4,16 +4,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
 
     <Button
         android:id="@+id/button31"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="50dp"
+        android:layout_marginTop="29dp"
         android:layout_marginEnd="64dp"
-        android:text="Save Changes"
+        android:background="@drawable/button_shape"
+        android:text="@string/save_changes"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="462dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editText24" />
 
     <EditText
         android:id="@+id/editText19"
@@ -24,7 +27,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Age"
+        android:text="@string/age"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText18"
@@ -38,7 +41,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="text|textPostalAddress|number"
-        android:text="Location"
+        android:text="@string/location"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText14" />
@@ -51,7 +54,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="phone"
-        android:text="Phone #"
+        android:text="@string/phone"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText18" />
@@ -65,7 +68,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textEmailAddress|textWebEmailAddress"
-        android:text="Email"
+        android:text="@string/email"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText20"
@@ -76,39 +79,42 @@
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:inputType="text|number"
-        android:text="Make"
+        android:text="@string/car_make"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toStartOf="@+id/editText24"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="396dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <EditText
         android:id="@+id/editText24"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:inputType="text|number"
-        android:text="Model"
+        android:text="@string/car_model"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toStartOf="@+id/editText25"
-        tools:layout_editor_absoluteY="396dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <EditText
         android:id="@+id/editText25"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:inputType="text|number"
-        android:text="License Plate"
+        android:text="@string/car_plate"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="396dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editText21" />
 
     <EditText
         android:id="@+id/editText15"
@@ -119,7 +125,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textPassword|textWebPassword|numberPassword"
-        android:text="Password(?)"
+        android:text="@string/pass"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -130,33 +136,26 @@
         android:id="@+id/copyright10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="16dp"
-        android:text="(C) MYOUL 2018"
+        android:text="@string/copyright"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/myoul-icon4"
-        app:layout_constraintTop_toBottomOf="@+id/button17" />
+        app:layout_constraintStart_toEndOf="@+id/myoul-icon11" />
 
     <ImageView
         android:id="@+id/myoul-icon11"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/copyright"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/copyright2"
-        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/myoul_icon" />
 
     <ImageView
@@ -179,7 +178,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/name"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29" />
@@ -203,12 +202,14 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="64dp"
+        android:layout_marginTop="27dp"
         android:layout_marginEnd="41dp"
-        android:text="Edit Info"
+        android:background="@drawable/button_shape"
+        android:text="@string/edit_info"
         app:layout_constraintEnd_toStartOf="@+id/button31"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="462dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editText23" />
 
     <TextView
         android:id="@+id/textView30"
@@ -218,7 +219,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="123dp"
         android:layout_marginBottom="16dp"
-        android:text="Vehicle Specifications"
+        android:text="@string/car_specs"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toTopOf="@+id/editText23"
         app:layout_constraintEnd_toEndOf="parent"
