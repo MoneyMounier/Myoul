@@ -49,7 +49,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.myoul.app.HomeActivity" />
         </activity>
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/button_shape" />
     </application>
 
 </manifest>
