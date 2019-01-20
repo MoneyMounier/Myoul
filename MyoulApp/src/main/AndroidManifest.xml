@@ -53,7 +53,7 @@
 
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/button_shape" />
+            android:resource="@drawable/button_shape" />
     </application>
 
 </manifest>
