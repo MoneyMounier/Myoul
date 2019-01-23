@@ -3,10 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="myoulLBlue">#97bcd5</color>
+    <color name="myoulLBlue">#97BCD5</color>
     <color name="myoulDBlue">#203277</color>
     <color name="myoulMBlue">#6385bb</color>
-    <color name="myoulGold">#e0d030</color>
+    <color name="myoulGold">#FFED73</color>
     <color name="white">#fff</color>
     <color name="black">#000</color>
 </resources>

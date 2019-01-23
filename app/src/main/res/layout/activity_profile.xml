@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.myoul.app.ProfileActivity">
+    tools:context="com.myoul.app.ProfileActivity"
+    android:background="@drawable/gradient">
 
 </android.support.constraint.ConstraintLayout>
