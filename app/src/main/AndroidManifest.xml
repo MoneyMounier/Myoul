@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.myoul.app">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/myoul_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.myoul.app.LoginActivity"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.myoul.app.CompleteDeliveryActivity" />
+        <activity android:name="com.myoul.app.EditProfileActivity" />
+        <activity android:name="com.myoul.app.HomeActivity" />
+        <activity android:name="com.myoul.app.CreateActivity" />
+        <activity android:name="com.myoul.app.ProfileActivity" />
+    </application>
+
+</manifest>

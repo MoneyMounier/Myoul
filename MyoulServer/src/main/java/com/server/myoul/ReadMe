@@ -1,7 +1,0 @@
-place all server modules here
-
-module requirements:
-- an appropriate name ending in Server. ie: LoginServer which logs in a user
-- public methods to perform required processing and any supporting private methods needed
-- can return anything
-- the server will send back an object, the equivalent client module will need to be able to process this object
