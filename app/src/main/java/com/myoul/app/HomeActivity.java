@@ -1,34 +1,31 @@
 package com.myoul.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 public class HomeActivity extends AppCompatActivity {
 
     public static final String LEAD = "com.myoul.app";
+    Global global;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        global = (Global)this.getApplication();
 
-        //Intent intent = getIntent();
-        //String message = intent.getStringExtra(LoginActivity.LEAD);
-
-        // Capture the layout's TextView and set the string as its text
-        //TextView textView = findViewById(R.id.textView);
-        //textView.setText(message);
+        //TODO init the info on home page
     }
 
-    /*public void deliver(View view){
-        Intent intent = new Intent(this, MapActivity.class);
-        intent.putExtra(LEAD, 'd');
+    public void deliver(View view){
+        Intent intent = new Intent(this, DeliveryActivity.class);
         startActivity(intent);
     }
 
     public void send(View view){
-        Intent intent = new Intent(this, MapActivity.class);
-        intent.putExtra(LEAD, 's');
+        Intent intent = new Intent(this, SendActivity.class);
         startActivity(intent);
-    }*/
+    }
 }

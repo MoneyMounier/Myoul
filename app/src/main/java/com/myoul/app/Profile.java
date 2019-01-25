@@ -8,4 +8,10 @@ public class Profile {
 
     public String user;
     public String pass;
+    public ProfileType type;
+
+    public enum ProfileType{
+        Driver,
+        Normal
+    }
 }

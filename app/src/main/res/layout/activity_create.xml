@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/myoul_icon" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -49,6 +49,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Create Account"
+        android:onClick="createAccount"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,7 +121,7 @@
         app:layout_constraintVertical_bias="0.729" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/email"
         android:layout_width="217dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -136,7 +137,7 @@
         app:layout_constraintVertical_bias="0.785" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
@@ -153,7 +154,7 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
