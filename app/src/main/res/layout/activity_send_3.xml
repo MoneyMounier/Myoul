@@ -32,7 +32,7 @@
         android:background="@drawable/button_shape"
         android:text="@string/next_button"
         android:visibility="visible"
-        android:onClick="next"
+        android:onClick="nextS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,7 +61,7 @@
         android:background="@drawable/button_shape"
         android:text="@string/back_button"
         android:visibility="visible"
-        android:onClick="prev"
+        android:onClick="prevS"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

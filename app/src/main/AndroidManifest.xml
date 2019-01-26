@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDDR6uei2ChCL7aw-utkdLZkkRDcLUxwOM"/>
+            android:value="@string/apikey"/>
         <activity
             android:name="com.myoul.app.LoginActivity">
             <intent-filter>
@@ -25,6 +25,7 @@
         <activity android:name="com.myoul.app.HomeActivity" />
         <activity android:name="com.myoul.app.CreateActivity" />
         <activity android:name="com.myoul.app.SendActivity" />
+        <activity android:name="com.myoul.app.SendMapActivity" />
     </application>
 
 </manifest>
