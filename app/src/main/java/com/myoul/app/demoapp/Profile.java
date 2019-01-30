@@ -1,4 +1,4 @@
-package com.myoul.app;
+package com.myoul.app.demoapp;
 
 /**
  * Created by mounien on 1/22/19.

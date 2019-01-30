@@ -2,8 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.myoul.app">
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
-        android:name=".Global"
+        android:name=".demoapp.Global"
         android:allowBackup="true"
         android:icon="@drawable/myoul_icon"
         android:label="@string/app_name"
@@ -11,21 +18,21 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/apikey"/>
-        <activity
-            android:name="com.myoul.app.LoginActivity">
+            android:value="@string/apikey" />
+
+        <activity android:name=".demoapp.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.myoul.app.DeliveryActivity" />
-        <activity android:name="com.myoul.app.ProfileActivity" />
-        <activity android:name="com.myoul.app.HomeActivity" />
-        <activity android:name="com.myoul.app.CreateActivity" />
-        <activity android:name="com.myoul.app.SendActivity" />
-        <activity android:name="com.myoul.app.SendMapActivity" />
+        <activity android:name=".demoapp.DeliveryActivity" />
+        <activity android:name=".demoapp.ProfileActivity" />
+        <activity android:name=".demoapp.HomeActivity" />
+        <activity android:name=".demoapp.CreateActivity" />
+        <activity android:name=".demoapp.SendActivity" />
+        <activity android:name=".demoapp.SendMapActivity" />
     </application>
 
 </manifest>

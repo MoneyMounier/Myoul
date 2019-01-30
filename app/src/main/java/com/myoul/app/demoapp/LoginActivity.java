@@ -1,4 +1,4 @@
-package com.myoul.app;
+package com.myoul.app.demoapp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.myoul.app.R;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.myoul.app;
+package com.myoul.app.demoapp;
 
 import android.app.Application;
 

@@ -1,7 +1,9 @@
-package com.myoul.app;
+package com.myoul.app.demoapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.myoul.app.R;
 
 public class ProfileActivity extends AppCompatActivity {
 

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/map"
-        tools:context=".DeliveryActivity"
+        tools:context=".demoapp.DeliveryActivity"
         android:name="com.google.android.gms.maps.SupportMapFragment" />
 
     <Button
@@ -37,11 +37,13 @@
         android:id="@+id/button26"
         android:layout_width="65dp"
         android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_shape"
         android:text="@string/back_button"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/myoul-icon9"
