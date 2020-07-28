@@ -1,0 +1,100 @@
+<resources>	
+    <!--MYOUL General-->	
+    <string name="app_name">Myoul</string>	
+    <string name="copyright">© MYOUL 2018</string>	
+    <string name="user">Username</string>	
+    <string name="pass">Password</string>	
+    <string name="login">Login</string>	
+
+    <!--Profiles -->	
+    <string name="profile_image">Profile Image</string>	
+    <string name="name">Name</string>	
+    <string name="age">Age</string>	
+    <string name="location">Location</string>	
+    <string name="rating1">Rating</string>	
+    <string name="phone">Phone #</string>	
+    <string name="email">Email</string>	
+    <string name="car_make">Make</string>	
+    <string name="car_model">Model</string>	
+    <string name="car_plate">License Plate #</string>	
+    <string name="car_specs">Vehicle Specifications</string>	
+    <string name="new_account">New Account</string>	
+    <string name="lerror">Invalid Username or Password.</string>	
+
+    <!-- server info -->	
+    <string name="apikey"></string>	
+    <string name="cerror">No connection to server</string>	
+    <string name="blank"></string>	
+    <string name="Nicksip"></string>	
+    <string name="ip"></string>	
+    <string name="port"></string>	
+    <string name="title_activity_account">AccountActivity</string>	
+
+    <!-- buttons -->	
+    <string name="send_icon">Send a package</string>	
+    <string name="deliver_icon">Deliver a package</string>	
+    <string name="back_button">Back</string>	
+    <string name="next_button">Next</string>	
+    <string name="finish_button">Finish</string>	
+    <string name="submit_button">Submit</string>	
+    <string name="cancel_button">Cancel</string>	
+    <string name="edit_info">Edit Info</string>	
+    <string name="save_changes">Save Changes</string>	
+    <string name="accept_button">Accept</string>	
+    <string name="decline_button">Decline</string>	
+    <string name="pmt_button">Payment</string>	
+
+    <!-- deliver information -->	
+    <string name="title_activity_map">Map</string>	
+    <string name="starting_location">Start</string>	
+    <string name="end_location">End</string>	
+    <string name="extra_time">Extra Minutes Willing to Travel</string>	
+    <string name="pkg_class">Pkg Class</string>	
+    <string name="extra_chara">Extra Characteristics</string>	
+    <string name="delivered">Package Delivered!</string>	
+    <string name="rating">Rate Customer</string>	
+    <string name="comments">Customer Comments</string>	
+
+    <!-- send/date information -->	
+    <string name="deliver_by">Deliver by Date</string>	
+    <string name="asap">ASAP</string>	
+    <string name="date_entry">MM/DD/YYYY</string>	
+    <string name="pickup_slots">Pickup Time Slots</string>	
+    <string name="morning">Morning</string>	
+    <string name="midday">Midday</string>	
+    <string name="afternoon">Afternoon/Early Evening</string>	
+    <string name="night">Night</string>	
+    <string name="manual_entry">Manual</string>	
+
+    <!-- package details -->	
+    <string name="pkg_chara">Package Characteristics</string>	
+    <string name="fragile">Fragile</string>	
+    <string name="living">Living</string>	
+    <string name="alive">If Alive...</string>	
+    <string name="units">Number of Units</string>	
+    <string name="animal">Animal</string>	
+    <string name="agriculture">Agriculture</string>	
+    <string name="acceptable">Acceptable Live Things:</string>	
+
+    <!-- class sizes -->	
+    <string name="class_size">Delivery Class Size</string>	
+    <string name="bike_class">Bike Class</string>	
+    <string name="sedan_class">Sedan Class</string>	
+    <string name="van_class">Mini Van Class</string>	
+    <string name="pickup_class">Pickup Class</string>	
+
+    <!-- receipt information -->	
+    <string name="pmt">Payment</string>	
+    <string name="pkg_desc">Package Description</string>	
+    <string name="pickup_time">Pickup Time</string>	
+    <string name="deliver_time">Delivery Time</string>	
+    <string name="pickup_loc">Pickup Address</string>	
+    <string name="deliver_loc">Delivery Address</string>	
+    <string name="title_activity_maps">Map</string>	
+
+    <!-- Instructions -->	
+    <string name="setOrigin">Tap to set starting location</string>	
+    <string name="setDest">Tap to set destination</string>	
+    <string name="clear">Tap to clear route</string>	
+
+</resources>
